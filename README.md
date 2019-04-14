@@ -1,4 +1,4 @@
-# Project Title
+
 # SpaceHustle 201-Final-Project
 
 Space Exploration Game
