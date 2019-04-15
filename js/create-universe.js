@@ -8,11 +8,14 @@ let bigBangArray = [];
 const portClass = ['Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8']
 
 // Adds all sectors to the BigBangArray to ensure that a sector does not get duplicated
+function Start(){
 generateBigBangArray();
 setStaticSectors();
 setAllOtherSectors();
 generateBigBangArray();
-// generatePorts();
+PortGenerator();
+}
+
 
 function SectGenerator(sectorNumber,sectorOut1=0, sectorOut2=0, sectorOut3=0, sectorOut4=0, sectorOut5=0, sectorName){
   this.sectorNumber = sectorNumber;
@@ -22,18 +25,17 @@ function SectGenerator(sectorNumber,sectorOut1=0, sectorOut2=0, sectorOut3=0, se
   this.sectorOut3 = sectorOut3;
   this.sectorOut4 = sectorOut4;
   this.sectorOut5 = sectorOut5;
-
+  this.sectorout6 = 1;
   allSectors.push(this);
 }
 
 function PortGenerator(){
-  sector = rndSectorGenerator();
   let rndNumber = Math.floor(Math.random() * portClass.length + 1);
-  portClass = portClass[rndNumber];
-  fuel = 2000;
-  organics = 2000;
-  equpment = 3000;
-  
+  this.sector = rndSectorGenerator();
+  this.portClass = portClass[rndNumber];
+  this.fuel = 2000;
+  this.organics = 2000;
+  this.equpment = 3000;
   allPorts.push(this);
 }
 
