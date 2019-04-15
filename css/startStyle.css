@@ -6,6 +6,10 @@ img{
   height:290px;
   width:360px;
   border-radius: 94%;
+  opacity: 0.7;
+}
+img:hover{
+  opacity: 1;
 }
 h1{
   color: brown;
@@ -21,6 +25,7 @@ h2{
   background:black;
   color:white;
 }
+
 * { box-sizing: border-box; }
 .video-background {
   background: #000;
