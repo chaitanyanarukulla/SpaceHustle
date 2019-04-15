@@ -1,7 +1,7 @@
 # User Stories
 
 ## End User Experience
-- As an end user I want to be able to play Space Trader.
+- As an end user I want to be able to play Space Hustle.
 - As an end user I want to compare my high score to other times that I play.
 - As an end user I want to compare my high score to other users.
 - As an end user I want to see updates to the game to enhance game play.
