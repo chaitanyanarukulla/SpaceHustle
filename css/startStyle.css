@@ -1,0 +1,86 @@
+/*
+This is the style for the start page
+*/
+/* Card contains all the sections inside it */
+img{
+  height:290px;
+  width:360px;
+  border-radius: 94%;
+}
+h1{
+  color: brown;
+  font-size: 35px;
+}
+label{
+  background: #000;
+  color:white;
+  font-size: 34px;
+}
+h2{
+  font-size: 30px;
+  background:black;
+  color:white;
+}
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+input{
+  margin-left:10px;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+.card{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.section1{
+  margin-top:50px;
+}
+.section2{
+  margin-top:50px;
+}
+.section3 button{
+  font-size:35px;
+  border-radius: 12px;
+  background-image: linear-gradient(to right, #003973 0%, #E5E5BE 51%, #003973 100%)
+}
+.section3 button:hover{ 
+  background-position: right center; 
+}
+.section4{
+  margin-top: 50px;
+}
+.section4 button{
+  font-size:45px;
+  border-radius: 10px;
+  background-image: linear-gradient(to right, #4CA1AF 0%, #C4E0E5 51%, #4CA1AF 100%)
+}
+.section4 button:hover{ 
+  background-position: right center; 
+}
