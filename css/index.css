@@ -1,0 +1,181 @@
+/* Background */
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+
+/* Title */
+.wrapbox {
+	top: 20%;
+	left: 20%;
+	width: 60%;
+  display: block;
+  position: absolute;
+}
+
+.titlewrapper {
+	color: #fff;
+  text-transform: uppercase;
+  font-size: 50px;
+  margin: 0 5%;
+  max-width: 900px;
+  min-width: 300px;
+  line-height: 90px;
+  letter-spacing: 2px;
+  height: 40%;
+}
+@media screen and (max-width: 600px) {
+	.titlewrapper {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 0;
+  }
+}
+
+.maintitle {
+  transform: translateX(-50%) rotate(-10deg);
+  display: block;
+  float: left;
+  left: 50%;
+  position: relative;
+}
+
+.maintitle span {
+  transform: skew(-10deg);
+  display: block;
+  float: left;
+  text-shadow: #533d4a 1px 1px, #533d4a 2px 2px, #533d4a 3px 3px, #533d4a 4px 4px, #533d4a 5px 5px, #533d4a 6px 6px;
+  min-width: 10px;
+  min-height: 10px;
+  position: relative;
+}
+.maintitle:nth-child(1) {
+  font-size: 135%;
+  color: #30f38e;
+}
+.maintitle:nth-child(2) {
+  font-size: 85%;
+  color: #e99518;
+}
+.title:nth-child(3) {
+  font-size: 85%;
+  color: #e99518;
+}  
+
+#instructions, #startGame, #playerSettings {
+  width: 300px;
+	opacity: .5;
+	padding: 2vh 2vw;
+	background-color:  white;
+	border-radius: 5px;
+	font-size: 1em;
+	text-transform: uppercase;
+	font-weight: bolder;
+	cursor: pointer;
+	/* border: 2px solid black; */
+	margin: 2.5vh 20px 1.5vh;
+	transition-duration: 1.5s;
+	color: #6774ff;
+	font-weight: 800;
+	/* max-width: 150px; */
+	text-align: center;
+}
+
+#instructions:hover, #startGame:hover, #playerSettings:hover {
+	cursor: pointer;
+	opacity: .6;
+	transition-duration: 1.5s;
+	display: inline-block; -webkit-transform:scale(1.3);
+	display: inline-block; -moz-transform: scale(1.2);
+	display: inline-block; -ms-transform: scale(1.2);
+}
+
+.menu {
+  display: block;
+  float: left;
+  left: 35%;
+  position: relative;
+  /* margin-left: 50%;
+  margin-right: 50%; */
+  /* height: 500px; */
+  margin-top: 30%;
+  /* text-align: center; */
+	/* font-family: 'Raleway', sans-serif; */
+	font-weight: 400;
+	letter-spacing: 1px;
+	font-size: 14px;
+	color: #c9d7ff;
+	z-index: 2;
+}
+@media screen and (max-width: 600px) {
+	.menu {
+    margin-top: 80%;
+    left: 5%;
+	}
+}
+
+.flashit{
+  display: block;
+  color:#f2f;
+	-webkit-animation: flash linear 2s infinite;
+	animation: flash linear 2s infinite;}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+
+.container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  background-color: #ffbf00;
+}
+.red {
+  background-color: #f00;
+  width: 200px;
+  height: 150px;
+  margin: 5px auto;
+}
+.blue { 
+  background-color: #0f0;
+  width: 200px;
+  height: 150px;
+  margin: 5px auto;
+}
+.green {
+  background-color: #00f;
+  width: 200px;
+  height: 150px;
+  margin: 5px auto;
+}

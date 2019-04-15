@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Space Hustle</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <!-- Letter animation RE: TweenMax-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  </head>
+  <body>
+    <div class="video-background">
+      <div class="video-foreground">
+        <iframe src="https://www.youtube.com/embed/-94tY3-H3Zk?playlist=-94tY3-H3Zk&controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+        
+    <section class="homebackground">
+      <div class="wrapbox">
+        <h1 class="titlewrapper">
+          <span class="maintitle">Space Hustle</span>
+          <span class="maintitle">Get them Credits, Partner!</span>
+          <!-- <span class="maintitle">Parter!!</span> -->
+        </h1>
+      </div>
+
+    </section>
+    <div class="menu">
+        <input class = "flashit" id = "instructions" type = "" value = "Instructions"/>
+        <input class = "flashit" id = "startGame" type = "" value = "Start Game"/>
+        <input class = "flashit" id = "playerSettings" type = "" value = "Settings"/>
+    </div>
+    <!-- <h3 class="flashit" id="message"></h3> -->
+    <!-- <section class="menu">
+      <input class = "flashit" id = "instructions" type = "" value = "Instructions"/>
+      <input class = "flashit" id = "startGame" type = "" value = "Start Game"/>
+      <input class = "flashit" id = "playerSettings" type = "" value = "Settings"/>
+    </section> -->
+  
+    <script scr="js/app.js"></script>
+    <script>
+      // Title animation
+      $(document).ready(function(){
+      $('.maintitle').lettering();
+      setTimeout(function() {
+        animation();
+        console.log('running letter animation.');
+        }, 500);
+      });
+      function animation() {
+        var title1 = new TimelineMax();
+        title1.staggerFromTo('.maintitle span', 0.5, {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -80},{ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.10);
+      }
+    </script>
+  </body>
+</html>
