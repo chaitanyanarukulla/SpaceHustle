@@ -26,18 +26,17 @@ function SectGenerator(sectorNumber,sectorOut1=0, sectorOut2=0, sectorOut3=0, se
   allSectors.push(this);
 }
 
-function PortGenerator(portClass,sector){
-  this.portClass = portClass;
-  this.sector = sector;
-
+function PortGenerator(){
+  sector = rndSectorGenerator();
+  let rndNumber = Math.floor(Math.random() * portClass.length + 1);
+  portClass = portClass[rndNumber];
+  fuel = 2000;
+  organics = 2000;
+  equpment = 3000;
+  
   allPorts.push(this);
 }
 
-function generatePort(){
-  for (let i=1; i < allSectors.length; i++){
-
-  }
-}
 
 function setStaticSectors() {
   // Function that sets sectors 1-10 to always look a certain way
