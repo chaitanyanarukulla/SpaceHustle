@@ -1,0 +1,24 @@
+/*
+style of top scores page
+*/
+body{
+  background-image: url('../assets/img/topScoreBackGround.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+div
+{
+  font-size: 26px;
+  color: white;
+  height: 300px;
+  margin-left:700px;
+  width: 500px;
+  /* //float: right; */
+  background-image: url('../assets/img/topScoreHead.gif');
+  background-repeat: no-repeat;
+  
+}
+li{
+  border-bottom: 5px solid white;
+  width:280px;
+}
