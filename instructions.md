@@ -8,6 +8,24 @@ You will be provided 5 option s of sectors to "warp" out to.  You can move to th
 
 As you travel through the universe, you will come across ports that buy or sell different products.  You have 3 types of products in the universe: Fuel, Organics, and Equipment.  You will come across many types of ports.  They will vary for each of the products buying and selling.  See the chart below for what to expect.
 
+╒╤════════════════════════════╤╤════════╤╕
+││   StarPort                 ││ Import ││
+╞╪════════════╤═══════════════╡│   or   ││
+││ Port Class │ Ore  Org  Equ ││ Export ││
+╞╪════════════╪═══════════════╡╞════════╪╡
+││     1      │  B    B    S  ││ Import ││
+││     2      │  B    S    B  ││ Import ││
+││     3      │  S    B    B  ││ Import ││
+││     4      │  S    S    B  ││ Export ││
+││     5      │  S    B    S  ││ Export ││
+││     6      │  B    S    S  ││ Export ││
+││     7      │  S    S    S  ││ Export ││
+││     8      │  B    B    B  ││ Import ││
+││     9      │ Not Available ││ ------ ││
+││     0      │ Not Available ││ ------ ││
+╞╪════════════╧═══════════════╧╧════════╪╡
+││                                      ││
+╘╧══════════════════════════════════════╧╛
 
 Be sure to look at all products and their prices.  Some ports will buy high, some buy low.  Same goes with the selling of products.  In each sector, the menu system will show you what options you have for buying / selling product.
 
