@@ -16,7 +16,7 @@ h1{
   font-size: 35px;
 }
 label{
-  background: #000;
+  background: #454545;
   color:white;
   font-size: 34px;
 }
@@ -36,6 +36,7 @@ h2{
 input{
   margin-left:10px;
 }
+
 .video-foreground,
 .video-background iframe {
   position: absolute;
@@ -89,3 +90,47 @@ input{
 .section4 button:hover{ 
   background-position: right center; 
 }
+
+/* 
+Reference : https://codepen.io/jacobberglund/pen/AKiBf
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
+strong{
+  color: #58ba83;
+}
+.transition{
+  transition: all .3s ease-out;
+}
+.heading{
+  text-align: center;
+  font-size:0.8em;
+  
+}
+.center-align{
+  display: inline;
+}
+
+input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+.section3 label {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  background-color: #454545;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 3px;
+  .transition;
+}
+
+input[type="radio"]:checked + label{
+  background-color:lightskyblue;
+}
+
+
