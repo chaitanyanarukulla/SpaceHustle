@@ -1,21 +1,26 @@
-'use strict'
-var user = {};
-//to held value of selected profile pic
+'use strict';
+var player = {};
+
+//to held value of selected profile pic---------------------------------------------->
 var proPic = document.getElementById('img');
-//previously selected profile avatar
+
+//previously selected profile avatar------------------------------------------------->
 var preProPic = '';
-//Flag for selecting avatar
+
+//Flag for selecting avatar --------------------------------------------------------->
 var isFirst = true;
-//Is called in HTML upon form submission
+
+//Is called in HTML upon form submission ------------------------------------------->
 function subbmitUserinfo() {
   event.preventDefault();
   var userName = document.getElementById('userName').value;
   //userInfo is the id of the form and level is the name for all the radio buttons in that form
   var diffculity = getLevelValue(document.getElementById('userInfo'),'level');
   var shipName = document.getElementById('shipName').value;
-  user = new User(userName,diffculity,shipName,proPic);
+  player = new User(userName,diffculity,shipName,proPic);
 }
 
+// User object has default game setting :------------------------------------------->
 var User = function(userName,level,shipName,proPic) {
   this.userName = userName;
   this.level = level;
@@ -52,7 +57,7 @@ function getLevelValue(form,name){
   }
   return value;
 }
-//when user selects the profile pic
+//when user selects the profile pic---------------------------------------------->
 proPic.addEventListener('click',getProfileName);
 
 
