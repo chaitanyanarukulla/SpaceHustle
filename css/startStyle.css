@@ -2,6 +2,12 @@
 This is the style for the start page
 */
 /* Card contains all the sections inside it */
+@import url(https://fonts.googleapis.com/css?family=Orbitron|Passion+One);
+
+/* User Interface or data: font-family: 'Passion One', cursive; */
+body{
+  font-family: 'Orbitron', sans-serif;
+}
 img{
   height:290px;
   width:360px;
@@ -16,13 +22,11 @@ h1{
   font-size: 35px;
 }
 label{
-  background: #454545;
   color:white;
   font-size: 34px;
 }
 h2{
   font-size: 30px;
-  background:black;
   color:white;
 }
 
@@ -33,10 +37,12 @@ h2{
   top: 0; right: 0; bottom: 0; left: 0;
   z-index: -99;
 }
-input{
-  margin-left:10px;
+input {
+  display: block;
+  transition: .3s ease;
 }
 
+/* for the background video */
 .video-foreground,
 .video-background iframe {
   position: absolute;
@@ -70,6 +76,23 @@ input{
 }
 .section2{
   margin-top:50px;
+  text-align:center;
+}
+.section2 input{
+  margin-left:10px;
+  text-align: center;
+  display: inline-block;
+  height: 40px;
+  margin-top:10px;
+  margin-bottom: 10px;
+}
+
+/*
+style for the userName and shipName
+*/
+
+.section3{
+  margin-top:50px;
 }
 .section3 input{
   font-size:35px;
@@ -82,20 +105,20 @@ input{
 .section4{
   margin-top: 50px;
 }
-.section4 input[type=submit]{
+.section4 button{
   font-size:25px;
-  border-radius: 10px;
-  background-image: linear-gradient(to right, #4CA1AF 0%, #C4E0E5 51%, #4CA1AF 100%)
+  font-family: 'Orbitron', sans-serif;
+  background-color: #454545;
+  color: white;
+  padding: 35px 40px;
 }
 .section4 button:hover{ 
-  background-position: right center; 
+  background-color: aqua;
 }
 
 /* 
 Reference : https://codepen.io/jacobberglund/pen/AKiBf
 */
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
-
 strong{
   color: #58ba83;
 }
@@ -124,13 +147,12 @@ input[type="radio"]{
   cursor: pointer;
   background-color: #454545;
   color: white;
-  padding: 5px 10px;
+  padding: 35px 40px;
   border-radius: 3px;
   .transition;
 }
 
 input[type="radio"]:checked + label{
-  background-color:lightskyblue;
+  background-color:lightgreen;
 }
-
 
