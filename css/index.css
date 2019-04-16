@@ -15,7 +15,6 @@
   height: 100%;
   pointer-events: none;
 }
-
 @media (min-aspect-ratio: 16/9) {
   .video-foreground { height: 300%; top: -100%; }
 }
@@ -30,7 +29,7 @@
 .vid-info .acronym { display: none; }
 }
 
-/* Title */
+/* Title Animation */
 .wrapbox {
 	top: 20%;
 	left: 20%;
@@ -52,9 +51,13 @@
 }
 @media screen and (max-width: 600px) {
 	.titlewrapper {
-    font-size: 20px;
+    font-size: 25px;
     line-height: 30px;
-    margin: 0;
+  }
+  .wrapbox {
+    top: 20%;
+    left: 35%;
+    width: 60%;
   }
 }
 
@@ -86,58 +89,138 @@
 .title:nth-child(3) {
   font-size: 60%;
   color: #e99518;
-}  
-
-#instructions, #startGame, #playerSettings {
-  width: 300px;
-	opacity: .5;
-	padding: 2vh 2vw;
-	background-color:  white;
-	border-radius: 5px;
-	font-size: 1em;
-	text-transform: uppercase;
-	font-weight: bolder;
-	cursor: pointer;
-	/* border: 2px solid black; */
-	margin: 2.5vh 20px 1.5vh;
-	transition-duration: 1.5s;
-	color: #6774ff;
-	font-weight: 800;
-	/* max-width: 150px; */
-	text-align: center;
 }
 
-#instructions:hover, #startGame:hover, #playerSettings:hover {
-	cursor: pointer;
-	opacity: .6;
-	transition-duration: 1.5s;
-	display: inline-block; -webkit-transform:scale(1.3);
-	display: inline-block; -moz-transform: scale(1.2);
-	display: inline-block; -ms-transform: scale(1.2);
-}
-
-.menu {
-  display: block;
-  float: left;
-  left: 35%;
-  position: relative;
-  /* margin-left: 50%;
-  margin-right: 50%; */
-  /* height: 500px; */
-  margin-top: 30%;
-  /* text-align: center; */
-	/* font-family: 'Raleway', sans-serif; */
-	font-weight: 400;
-	letter-spacing: 1px;
-	font-size: 14px;
-	color: #c9d7ff;
-	z-index: 2;
+/* Game menu */
+#allthethings {
+  font-family: 'Orbitron', sans-serif;
+  width:0px;
+  height:0px;
+  border-left: 300px solid transparent;
+  border-right:300px solid transparent;
+  border-top: 300px solid transparent;
+  border-radius: px;
+  position:relative;
+  margin: 40% auto 0 auto;
+  top:5px;
+  left:2px;
 }
 @media screen and (max-width: 600px) {
-	.menu {
-    margin-top: 80%;
-    left: 5%;
-	}
+	#allthethings {
+    font-size: 20px;
+    line-height: 30px;
+    margin: 90% auto 0 auto;
+  }
+}
+
+#startGame {
+  font-family: 'Orbitron', sans-serif;
+  position:relative;
+  bottom:330px;
+  right:300px;
+  height:50px;
+  width:600px;
+  text-align:center;
+  font-size:30px;
+  background-size: 1px 300%;
+  -webkit-transition:0.5s;
+  transition:0.5s;
+  color:orange;
+  font-family:shadows into light;
+  cursor:pointer;
+}
+
+#startGame:hover {
+  font-family: 'Orbitron', sans-serif;
+  color:white;
+-webkit-transform:rotate(-1deg);
+  transform:rotate(-2deg);
+}
+#instructions:hover {
+  font-family: 'Orbitron', sans-serif;
+  color:white;
+  -webkit-transform:rotate(-2deg);
+  transform:rotate(-2deg);
+}
+#playerSettings:hover {
+  color:white;
+  -webkit-transform:rotate(-2deg);
+  transform:rotate(-2deg);
+}
+#aboutUs:hover {
+  color:white;
+  -webkit-transform:rotate(-2deg);
+  transform:rotate(-2deg);
+}
+
+/* Menu title text */
+#startGame p {
+  font-family: 'Orbitron', sans-serif;
+  position:relative;
+  top:2px;
+  right:4px;
+}
+
+#instructions {
+  height:50px;
+  width:500px;
+  position:relative;
+  bottom:345px;
+  right:240px;
+  text-align:center;
+  font-size:30px;
+  font-family:shadows into light;
+  color:orange;
+  -webkit-transition:0.5s;
+  transition:0.5s;
+  cursor:pointer;
+}
+#instructions p {
+  font-family: 'Orbitron', sans-serif;
+  position:relative;
+  top:0px;
+  right:9px;
+}
+
+#playerSettings {
+  height:50px;
+  width:400px;
+  position:relative;
+  bottom:360px;
+  right:200px;
+  font-size:30px;
+  text-align:center;
+  font-family:shadows into light;
+  color:orange;
+  -webkit-transition:0.5s;
+  transition:0.5s;
+  cursor:pointer;
+}
+#playerSettings p {
+  font-family: 'Orbitron', sans-serif;
+  position:relative;
+  top:0px;
+  right:4px;
+}
+
+#aboutUs {
+  height:50px;
+  width:300px;
+  position:relative;
+  bottom:375px;
+  font-size:30px;
+  right:150px;
+  text-align:center;
+  font-family:shadows into light;
+  color:orange;
+  -webkit-transition:0.5s;
+  transition:0.5s;
+  cursor:pointer;
+}
+#aboutUs p {
+  font-family: 'Orbitron', sans-serif;
+  position:relative;
+  top:0px;
 }
 
 .flashit{
@@ -153,29 +236,4 @@
 	0% { opacity: 1; } 
 	50% { opacity: .1; } 
 	100% { opacity: 1; }
-}
-
-.container {
-  position: relative;
-  width: 500px;
-  height: 500px;
-  background-color: #ffbf00;
-}
-.red {
-  background-color: #f00;
-  width: 200px;
-  height: 150px;
-  margin: 5px auto;
-}
-.blue { 
-  background-color: #0f0;
-  width: 200px;
-  height: 150px;
-  margin: 5px auto;
-}
-.green {
-  background-color: #00f;
-  width: 200px;
-  height: 150px;
-  margin: 5px auto;
 }
