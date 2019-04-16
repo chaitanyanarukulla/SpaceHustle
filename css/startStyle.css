@@ -70,9 +70,9 @@ input{
 .section2{
   margin-top:50px;
 }
-.section3 button{
+.section3 input{
   font-size:35px;
-  border-radius: 12px;
+  color:wheat;
   background-image: linear-gradient(to right, #003973 0%, #E5E5BE 51%, #003973 100%)
 }
 .section3 button:hover{ 
@@ -81,8 +81,8 @@ input{
 .section4{
   margin-top: 50px;
 }
-.section4 button{
-  font-size:45px;
+.section4 input[type=submit]{
+  font-size:25px;
   border-radius: 10px;
   background-image: linear-gradient(to right, #4CA1AF 0%, #C4E0E5 51%, #4CA1AF 100%)
 }
