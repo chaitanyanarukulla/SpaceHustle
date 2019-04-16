@@ -8,12 +8,14 @@ let bigBangArray = [];
 const portClass = ['Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8']
 
 // Adds all sectors to the BigBangArray to ensure that a sector does not get duplicated
-function Start(){
-generateBigBangArray();
-setStaticSectors();
-setAllOtherSectors();
-generateBigBangArray();
-PortGenerator();
+function Start() {
+  generateBigBangArray();
+  setStaticSectors();
+  setAllOtherSectors();
+  generateBigBangArray();
+  generatePortSectorOne();
+  generatePortSectorTwoToTen();
+  PortGenerator();
 }
 
 
@@ -60,14 +62,14 @@ function generateBigBangArray(){
     if (bigBangArray.includes(rndNumber) && (rndNumber < 11)){
       rndNumber = Math.floor(Math.random() * sectors);
     }
-    console.log('Random number to push into bigBanArray', rndNumber);
+    console.log('Random number to push into bigBangArray', rndNumber);
     bigBangArray.push(rndNumber);
   }
 }
 
 function randomFill(){
     let rndNumber = Math.floor(Math.random() * sectors);
-    console.log('Random Fill number to push into bigBanArray', rndNumber);
+    console.log('Random Fill number to push into bigBangArray', rndNumber);
 }
 
 function rndSectorGenerator() {
@@ -96,4 +98,12 @@ function setAllOtherSectors(){
       new SectGenerator(i,randomFill(),randomFill(),randomFill(),randomFill(),randomFill(),randomFill(),rndSectorName());
     }
   }
+}
+
+function generatePortSectorOne(){
+
+}
+
+function generatePortSectorTwoToTen(){
+
 }
