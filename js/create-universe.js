@@ -1,6 +1,6 @@
 'use strict';
 
-let maxSectors = 1000;
+let maxSectors = 100;
 let allPorts = [];
 let allSectors = [];
 let bigBangArray = [];
@@ -40,7 +40,7 @@ function Ports(portSector,portClass='Class0'){
   this.portClass = portClass;
   this.fuel = getRandomNumber(3000,4000);
   this.organics = getRandomNumber(1000,4000);
-  this.equipment = getRandomNumber(500,1500);
+  this.equipment = getRandomNumber(800,3000);
   this.sellPercent = getRandomNumber(60,80)/100;
   this.buyPercent = getRandomNumber(81,100)/100;
 
