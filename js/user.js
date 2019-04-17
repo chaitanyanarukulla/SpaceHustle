@@ -35,6 +35,11 @@ var User = function(userName,level,shipName,proPic) {
   this.turnsleft = 10;
   this.credits = 100 ;
   this.maxHolds = 500;
+  this.fuelHolds = 0;
+  this.orgHolds = 0;
+  this.equipHolds = 0;
+  this.maxHolds = 0;
+  // this.emptyHolds = (maxHolds - (fuelHolds + orgHolds + equipHolds));
 };
 function getProfileName(){
   proPic = window.event.srcElement.id;
@@ -64,8 +69,15 @@ console.log('player data:', player);
 //when user selects the profile pic---------------------------------------------->
 proPic.addEventListener('click',getProfileName);
 
+<<<<<<< HEAD
+/// Moves for function
+function move(){
+  player
+}
+=======
 
 // function move(){
 //   player.currentSector = []
   
 // }
+>>>>>>> aec72af39e88cdb0d1b70ab6b3471408f4f5c1fb
