@@ -12,10 +12,11 @@ let name3 = ['I', 'II', 'III', 'IV', 'V', 'VI','VII', 'VIII', 'IX', 'X', 'XI', '
 
 // Adds all sectors to the BigBangArray to ensure that a sector does not get duplicated
   generateBigBangArray(); // Sets Array to random order
-  bigBang();
-  setStaticSectors();
+  bigBang(); // Generates sectors by pushing to the constructor.
+  setStaticSectors(); // Sets static warps for sectors 1-10.
   generatePortSectorOneToTen();
-  setAllOtherSectors();
+  setAllOtherSectors(); // Generate warps for sectors 11-maxSectors
+  validateUniverse();
 
 //Constructor function to generate a game sector with 5 warps out.
   function Sectors(sectorNumber, port=sectorNumber){
@@ -27,10 +28,10 @@ let name3 = ['I', 'II', 'III', 'IV', 'V', 'VI','VII', 'VIII', 'IX', 'X', 'XI', '
   allSectors.push(this);
 }
 
-  function bigBang(){
-    for(let i=1; i <= maxSectors; i++){
-      new Sectors(i);
-    }
+function bigBang(){
+  for(let i=1; i <= maxSectors; i++){
+    new Sectors(i);
+  }
 }
 
 // Constructor function to generate a port with starting product and a buy/sell percentage.
@@ -48,16 +49,16 @@ function Ports(portSector,portClass='Class0'){
 
 // Function that sets sectors 1-10 to always look a certain way
 function setStaticSectors() {
-    allSectors[0].sectorsOut = [2, 3, 4, 5, rndSectorGenerator()];
-    allSectors[1].sectorsOut = [3, 5, 6, 7, rndSectorGenerator()];
-    allSectors[2].sectorsOut = [2, 5, 6, 8, rndSectorGenerator()];
-    allSectors[3].sectorsOut = [5, 6, 7, 9, rndSectorGenerator()];
-    allSectors[4].sectorsOut = [2, 3, 4, 8, rndSectorGenerator()];
-    allSectors[5].sectorsOut = [2, 3, 4, 10, rndSectorGenerator()];
-    allSectors[6].sectorsOut = [2, 6, 8, 10, rndSectorGenerator()];
-    allSectors[7].sectorsOut = [3, 5, 7, 9, rndSectorGenerator()];
-    allSectors[8].sectorsOut = [3, 4, 7, 8, rndSectorGenerator()];
-    allSectors[9].sectorsOut = [2, 4, 6, 7, rndSectorGenerator()];
+  allSectors[0].sectorsOut = [2, 3, 4, 5, rndSectorGenerator()];
+  allSectors[1].sectorsOut = [3, 5, 6, 7, rndSectorGenerator()];
+  allSectors[2].sectorsOut = [2, 5, 6, 8, rndSectorGenerator()];
+  allSectors[3].sectorsOut = [5, 6, 7, 9, rndSectorGenerator()];
+  allSectors[4].sectorsOut = [2, 3, 4, 8, rndSectorGenerator()];
+  allSectors[5].sectorsOut = [2, 3, 4, 10, rndSectorGenerator()];
+  allSectors[6].sectorsOut = [2, 6, 8, 10, rndSectorGenerator()];
+  allSectors[7].sectorsOut = [3, 5, 7, 9, rndSectorGenerator()];
+  allSectors[8].sectorsOut = [3, 4, 7, 8, rndSectorGenerator()];
+  allSectors[9].sectorsOut = [2, 4, 6, 7, rndSectorGenerator()];
 }
 
 function generatePortSectorOneToTen(){
@@ -81,12 +82,12 @@ function generateBigBangArray(){
 }
 
 function shuffleArray() {
-    for (let i = bigBangArray.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
-        let temp = bigBangArray[i];
-        bigBangArray[i] = bigBangArray[j];
-        bigBangArray[j] = temp;
-    }
+  for (let i = bigBangArray.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    let temp = bigBangArray[i];
+    bigBangArray[i] = bigBangArray[j];
+    bigBangArray[j] = temp;
+  }
 }
 
 function setAllOtherSectors(){
@@ -106,7 +107,7 @@ function setAllOtherSectors(){
 }
 
 function rndSectorGenerator() {
-    return bigBangArray.shift();
+  return bigBangArray.shift();
 }
 
 function getRandomNumber(min,max){
@@ -120,6 +121,18 @@ function capFirst(string) {
 }
 
 function generateName(){
-	let name = capFirst(name1[getRandomNumber(0, name1.length)]) + ' ' + capFirst(name2[getRandomNumber(0, name2.length)]) + ' ' + capFirst(name3[getRandomNumber(0, name3.length)]);
+  let name = capFirst(name1[getRandomNumber(0, name1.length)]) + ' ' + capFirst(name2[getRandomNumber(0, name2.length)]) + ' ' + capFirst(name3[getRandomNumber(0, name3.length)]);
 	return name;
+}
+
+
+// Testing Function to validate there are no 0 Warp sectors.
+function validateUniverse(){
+  for (let i=0; i < maxSectors; i++){
+    for (let j = 0; j < 5; j++){
+      if (allSectors[i].sectorsOut[j] === 0){
+        allSectors[i].sectorsOut[j] = rndSectorGenerator();
+      }
+    }
+  }
 }
