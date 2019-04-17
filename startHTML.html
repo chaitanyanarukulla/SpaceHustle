@@ -13,36 +13,44 @@
 </head>
 <body>
     <div class="video-background">
-        <div class="video-foreground">
-            <iframe src="https://www.youtube.com/embed/kB7PDziZlSs?playlist=kB7PDziZlSs&controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+      <div class="video-foreground">
+        <iframe src="https://www.youtube.com/embed/kB7PDziZlSs?playlist=kB7PDziZlSs&controls=0&showinfo=0&rel=0&autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class='card'>
+      <div class='section1'>
+        <h1>Select your avatar</h1>
+        <div id='img'>
+          <img src='./assets/img/ship1.jpg' id='A'>
+          <img src='./assets/img/ship2.jpg' id='B'>
+          <img src='./assets/img/ship3.jpg' id='C'>
         </div>
       </div>
-    <from>
-        <div class='card'>
-            <div class='section1'>
-                <h1>Select your avatar</h1>
-
-              </div>
-              <div class ='section2'>
-                <label>User Name: </label>
-                <input id='userName' type='text'size='35px'></input>
-                <label>Ship Name: </label>
-                <input id='shipName'type='text'size='35px'></input>
-              </div>
-              <div class='section3'>
-                <h2>Select Difficulty</h2>
-                <label>Easy </label>
-                <input type="radio" name="level" value="easy" checked>
-                <label>Medium </label>
-                <input type="radio" name="level" value="medium">
-                <label>Hard </label>
-                <input type="radio" name="level" value="hard">
-              </div>
-              <div class='section4'>
-                  <input type="submit" onclick="subbmitUserinfo()">
-              </div>
+      <form id='userInfo'>
+        <div class='section2'>
+            <label for='name'>User Name</label></br>
+            <input type="text" name ='userName'id="userName" size ='35' required></br>
+            
+            <label for='name'>Ship Name</label></br>
+            <input type="text" name ='shipName'id="shipName" size ='35'required>
         </div>
-    </from>
-    <script src='./js/user.js'></script>
+        <div class='section3'>
+          <div class="center-align"> 
+            <input type="radio" name="level" id="size_1" value="easy" checked />
+            <label for="size_1">Easy</label>
+             <input type="radio" name="level" id="size_2" value="medium" />
+             <label for="size_2">Medium</label>
+             <input type="radio" name="level" id="size_3" value="hard" />
+             <label for="size_3">Hard</label>
+          </div>
+        </div>  
+        <div class='section4'>
+          <button onclick="subbmitUserinfo()">Start
+        </div>
+      </form>
+    </div>
 </body>
+<script src='./js/user.js'>
+</script>
 </html>
