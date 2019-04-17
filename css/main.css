@@ -4,7 +4,7 @@ body{
   font-family: 'Orbitron', sans-serif;
   background-image: url(../assets/background/bg1.jpg);
   height: 100%;
-  color: #33ff00;
+  color: #e99518;
 }
 input[type="radio"]{
   visibility: hidden;
@@ -18,8 +18,10 @@ button {
   line-height: 1;
   margin: 0.5em;
   padding: 1em 2em;
+  cursor: pointer;
 }
 
+button:focus {outline:0;}
 /*lower half of container */
 .section2{
   position: absolute;
@@ -42,7 +44,7 @@ button {
   display: table-row;  
 }
 .col1 label{
-
+  
   display:table-cell;
 }
 .col1 input{ 
@@ -95,14 +97,17 @@ button {
 }
 .col4{
   display:table-cell;
-  width:60%;
 }
 .col4 fieldset{
+  /* height: 210px; */
   height: 210px;
+  width: auto;
+  text-align: center;
+
 }
 .col4 button{
   font-family: 'Orbitron',sans-serif;
-  padding: 15px 32px;
+  /* padding: 5px 20px; */
   display: table-row;
 }
 .colHead{
@@ -114,23 +119,31 @@ button {
   text-align: center;
 }
 input[type="radio"]:checked + label{
-  background-color:lightgreen;
+  background-color:#30f38e;
 }
 input[type="radio"]:checked + label{
-  background-color:none;
+  background: #e99518;
+  border-radius: 1px;
+  color: #faf0e2 !important;
+  border-color: #494949 !important;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 0 8px #e99518
 }
 .colBody label {
+  height: 30px;
+  width: 60px;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
   background-color: #454545;
   color: white;
-  padding: 15px 10px;
+  padding: 15px 30px;
   border-radius: 3px;
 }
 .colA{
-  width: 25%;
+  width: 20%;
+  margin: 0 30px;
   display: table-cell;
   /* margin-right:40px; */
 }
@@ -152,18 +165,42 @@ input[type="radio"]:checked + label{
 }
 
 .pulse {
-  color: #20bf6b !important;
+  cursor: pointer;
+  width: 200px;
+  color: #7b817e !important;
   text-transform: uppercase;
-  background: #ffffff;
-  padding: 20px;
-  border: 4px solid #20bf6b !important;
-  border-radius: 1px;
+  background: #666666;
+  padding: 5px;
+  border: 4px solid #7b817e !important;
   display: inline-block;
+  border-radius: 50px;
   }
 
 .pulse:hover {
+  background: #e99518;
+  border-radius: 1px;
+  color: #faf0e2 !important;
+  border-color: #494949 !important;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 0 8px #e99518
+  }
+
+.pulse2 {
+  cursor: pointer;
+  width: auto;
+  color: #c5dbd0 !important;
+  text-transform: uppercase;
+  background: #e99518;
+  padding: 5px;
+  border: 4px solid #e99518 !important;
+  border-radius: 10px;
+  display: inline-block;
+  margin-left: 15px;
+  }
+
+.pulse2:hover {
   color: #494949 !important;
-  border-radius: 50px;
+
   border-color: #494949 !important;
   transition: all 0.3s ease 0s;
   }
@@ -175,11 +212,11 @@ input[type="radio"]:checked + label{
   margin-left: 40%;
 }
 .typewriter h1 {
-  color: #33ff00;
+  color: #e99518;
   font-family: 'Orbitron', sans-serif;
   /* font-family: 'VT323', monospace; */
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid #33ff00; /* The typwriter cursor */
+  border-right: .15em solid #e99518; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .10em; /* Adjust as needed */
@@ -199,7 +236,7 @@ input[type="radio"]:checked + label{
 /* The typewriter cursor effect */
 @keyframes blinking-cursor {
   from, to { border-color: transparent }
-  50% { border-color: #33ff00; }
+  50% { border-color: #e99518; }
 }
 
 .no-js #loader { 
@@ -220,4 +257,14 @@ input[type="radio"]:checked + label{
   z-index: 9999;
   background: url(../assets/loading/hyper.gif) center no-repeat #282828;
   background-size: cover;
+}
+
+fieldset span {
+  float: right;
+  margin-left:100%;
+  
+}
+fieldset p {
+  margin-right: 20px;
+  
 }

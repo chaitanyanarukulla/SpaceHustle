@@ -5,6 +5,11 @@ This is the style for the start page
 /* User Interface or data: font-family: 'Passion One', cursive; */
 body {
   font-family: 'Orbitron', sans-serif;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../assets/background/bg1.jpg);
 }
 img {
   height:290px;
@@ -12,7 +17,7 @@ img {
   border-radius: 94%;
   opacity: 0.7;
 }
-img: hover {
+img:hover {
   opacity: 1;
 }
 
@@ -84,13 +89,22 @@ input {
 }
 .section2 input{
   text-align: center;
-  margin-left:10px;
+  /* margin-left:10px; */
   display: inline-block;
   height: 40px;
-  margin-top:10px;
-  margin-bottom: 10px;
+  margin: 10px 0;
+  font-size: 20px;
+  border: none;
 }
-
+input[type=text] {
+  outline: none;
+  background: transparent;
+  width: 300px;
+  border: none;
+  border-bottom: 2px solid #e99518;
+  font-family: 'Orbitron', sans-serif;
+  color:#e99518;
+}
 /*
 style for the userName and shipName
 */
@@ -103,10 +117,7 @@ style for the userName and shipName
   font-size: 20px;
   width: 200px;
 }
-.section3 input{
-  /* margin-top:10px;
-  background-image: linear-gradient(to right, #003973 0%, #E5E5BE 51%, #003973 100%) */
-}
+
 .section3 button:hover{ 
   background-position: right center; 
 }
@@ -147,7 +158,6 @@ input[type="radio"]{
   color: white;
   padding: 35px 40px;
   border-radius: 3px;
-  .transition;
 }
 
 input[type="radio"]:checked + label{
@@ -155,8 +165,10 @@ input[type="radio"]:checked + label{
 }
 
 .flashit{
+  font-weight: 800;
+  margin: 10% auto;
   transition-duration: .5s;
-  font-size:25px;
+  font-size:35px;
   font-family: 'Orbitron', sans-serif;
   color: #e99518;
   display: block;
