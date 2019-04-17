@@ -11,6 +11,9 @@ input[type="radio"]{
   height: 0;
   width: 0;
 }
+input[type='text']{
+  color:blue;
+}
 button {
   background: none;
   border: 2px solid;

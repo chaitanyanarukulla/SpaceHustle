@@ -18,30 +18,42 @@
 <body>
     <div class='typewriterBox'>
         <div class="typewriter">
-        <h1>NOW ARRIVING AT SECTOR <label id='planetName'>[sectorname]</label>...</h1>
+        <h1>NOW ARRIVING AT SECTOR<label id='planetName'>[sectorname]</label>...</h1>
       </div>
     </div>
   <div class='section1'>
 
   </div>
-  
+
   <div class='section2'>
     <div class='col1'>
       <fieldset>
         <legend>Sector Stats</legend>
         <p>
           <label>Fuel</label>
+<<<<<<< HEAD
           <span id='sectorFuelStat'>23</span>
+=======
+          <span id='sectorFuelStat'>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
         </p>
         <br>
         <p>
           <label>Organic</label>
+<<<<<<< HEAD
           <span id='sectorOraganicStat'>33</span>
+=======
+          <span id='sectorOraganicStat'>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
         </p>
         <br>
         <p>
           <label>Equiments</label>
+<<<<<<< HEAD
           <span id='sectorEquimentStat'>33</span>
+=======
+          <span id='sectorEquimentStat'> </span>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
         </p>
       </fieldset>
     </div>
@@ -49,6 +61,7 @@
         <fieldset>
           <legend>Trade</legend>
           <p>
+<<<<<<< HEAD
             <button class='pulse2' value ='' id='sectorFuel'>Buy
             </button>
           </p>
@@ -58,6 +71,18 @@
           </p>
           <p>
             <button class='pulse2' value ='' id='sectorEquipment'>Buy
+=======
+
+            <button class='pulse' id='sectorFuel'>
+            </button>
+          </p>
+          <p>
+            <button class='pulse' id='sectorOrganic'>
+            </button>
+          </p>
+          <p>
+            <button class='pulse' id='sectorEquipment'>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
             </button>
           </p>
         </fieldset>
@@ -67,27 +92,47 @@
         <legend>Cargo Status</legend>
         <p>
           <label>Fuel</label>
+<<<<<<< HEAD
           <span id='userFuelStat'>23
+=======
+          <span id='userFuelStat'></span>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
         </p>
         <br>
         <p>
           <label>Organic</label>
+<<<<<<< HEAD
           <span id='userOrganicStat'>43
+=======
+          <span id='userOrganicStat'></span>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
         </p>
         <br>
         <p>
           <label>Equiments</label>
+<<<<<<< HEAD
           <span id='userEquimentStat'>23
+=======
+          <span id='userEquimentStat'></span>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
         </p>
         <br>
         <p>
           <label>Turns</label>
+<<<<<<< HEAD
           <span id='userFuelStat'>
+=======
+          <span id='userTurnStat'></span>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
         </p>
         <br>
         <p>
           <label>Credits</label>
+<<<<<<< HEAD
           <span id='userFuelStat'>
+=======
+          <span id='userCreditStat'></span>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
         </p>
       </fieldset>
     </div>
@@ -96,33 +141,37 @@
           <fieldset>
               <legend>Navigation</legend>
               <div class='colHead'>
+<<<<<<< HEAD
                 <button class='pulse'>Home</button>
                 <button class='pulse'>HYPERDRIVE</button>
+=======
+                <button class='pulse' id='home' >Home</button>
+>>>>>>> e6763cbff3aea40839dc033ecf4181751bd39f65
               </div>
               <div class='colBody'>
                 <div class='colA'>
                       <input type="radio" name="level" id="sector1" value="easy"/>
-                      <label for="sector1">Level A
+                      <label id="sector1Name" for="sector1">Level A
                       </label>
                 </div>
                 <div class='colB'>
                       <input type="radio" name="level" id="sector2" value="easy" />
-                      <label for="sector2">Level B
+                      <label id="sector2Name" for="sector2">Level B
                       </label>
                 </div>
                 <div class='colC'>
                     <input type="radio" name="level" id="sector3" value="easy" />
-                    <label for="sector3">Level C
+                    <label id="sector3Name" for="sector3">Level C
                     </label>
                 </div>
                 <div class='colD'>
                     <input type="radio" name="level" id="sector4" value="easy" />
-                    <label for="sector4">Level D
+                    <label id="sector4Name" for="sector4">Level D
                     </label>
                 </div>
                 <div class='colE'>
                   <input type="radio" name="level" id="sector5" value="easy"/>
-                  <label for="sector5">Level E
+                  <label id="sector5Name" for="sector5">Level E
                   </label>
                 </div>
               </div>
@@ -157,9 +206,9 @@
       </form>
     </div>
 </div>
-
-  <script src="./js/main.js"></script>
-  <script src='./js/create-universe.js'></script>
-
+    <script src='./js/create-universe.js'></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/calculations.js"></script>
+  
 </body>
 </html>

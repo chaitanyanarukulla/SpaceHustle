@@ -20,6 +20,7 @@ function subbmitUserinfo() {
   var shipName = document.getElementById('shipName').value;
   player = new User(userName,diffculity,shipName,proPic);
   localStorage.setItem('update', JSON.stringify(player));
+  window.open ('mainHTML.html','_self',false);eneccccbhljikcecelilftvtbegufldvbkkntcuftfjf
 
 }
 
@@ -29,12 +30,17 @@ var User = function(userName,level,shipName,proPic) {
   this.level = level;
   this.shipName = shipName;
   this.proPic = proPic;
-  this.currentSector = 1 ;
+  this.currentSector = 0;
   this.visitedSectorsArray = [];
   this.currentHolds = 20;
   this.turnsleft = 10;
   this.credits = 100 ;
   this.maxHolds = 500;
+  this.fuelHolds = 0;
+  this.orgHolds = 0;
+  this.equipHolds = 0;
+  this.maxHolds = 0;
+  // this.emptyHolds = (maxHolds - (fuelHolds + orgHolds + equipHolds));
 };
 function getProfileName(){
   proPic = window.event.srcElement.id;
@@ -60,12 +66,8 @@ function getLevelValue(form,name){
   }
   return value;
 }
+
 console.log('player data:', player);
 //when user selects the profile pic---------------------------------------------->
 proPic.addEventListener('click',getProfileName);
 
-
-// function move(){
-//   player.currentSector = []
-  
-// }
