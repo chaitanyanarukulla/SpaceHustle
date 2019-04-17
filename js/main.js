@@ -104,16 +104,16 @@ function sectorRules(className){
     buySellRule=['Buy','Buy','Buy'];
   }
   else if(className==='Class9'){
-    buySellRule=['','',''];
+    buySellRule=['No Stock','No Stock','No Stock'];
   }
 }
 //next quest logic
 function updateNextQuest(){
-  var sec1 = document.getElementById('sector1Name');
-  var sec2 = document.getElementById('sector2Name');
-  var sec3 = document.getElementById('sector3Name');
-  var sec4 = document.getElementById('sector4Name');
-  var sec5 = document.getElementById('sector5Name');
+  var sec1 = document.getElementById('sec1Nm');
+  var sec2 = document.getElementById('sec2Nm');
+  var sec3 = document.getElementById('sec3Nm');
+  var sec4 = document.getElementById('sec4Nm');
+  var sec5 = document.getElementById('sec5Nm');
   var curSec = data.currentSector;
   var outLet = allSectors[curSec].sectorsOut;
 
@@ -122,9 +122,32 @@ function updateNextQuest(){
   sec3.innerHTML = outLet[2];
   sec4.innerHTML = outLet[3];
   sec5.innerHTML = outLet[4];
-}
 
+  var input1 = document.getElementById('sec1');
+  var input2 = document.getElementById('sec2');
+  var input3 = document.getElementById('sec3');
+  var input4 = document.getElementById('sec4');
+  var input5 = document.getElementById('sec5');
+  input1.value = outLet[0];
+  input2.value = outLet[1];
+  input3.value = outLet[2];
+  input4.value = outLet[3];
+  input5.value = outLet[4];
+}
+function updateSectorVisted(){
+  var sec1 = document.getElementById('sec1Nm');
+  var sec2 = document.getElementById('sec2Nm');
+  var sec3 = document.getElementById('sec3Nm');
+  var sec4 = document.getElementById('sec4Nm');
+  var sec5 = document.getElementById('sec5Nm');
+  var curSec = data.currentSector;
+  var outLet = allSectors[curSec].sectorsOut;
+  for(var i = 0 ; i < 5; i++){
+    
+  }
+}
 updateSectorStats();
 buySellStats();
 updatePlayerStats();
 updateNextQuest();
+updateSectorVisted();

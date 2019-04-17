@@ -31,7 +31,7 @@ button:focus {outline:0;}
   bottom: 0;
   left: 0;
   right: 0;
-  display:table;
+  display:table-row;
   width: 100%;
 }
 .col1{
@@ -47,9 +47,9 @@ button:focus {outline:0;}
   display: table-row;  
 }
 .col1 label{
-  
   display:table-cell;
 }
+
 .col1 input{ 
   margin-left: 20px;
   display: table-cell;
@@ -100,6 +100,7 @@ button:focus {outline:0;}
 }
 .col4{
   display:table-cell;
+  width:60%;
 }
 .col4 fieldset{
   /* display: inline-block; */
@@ -121,6 +122,7 @@ button:focus {outline:0;}
 .colBody{
   display:table-row;
   text-align: center;
+  width: 100%;
 }
 input[type="radio"]:checked + label{
   background-color:#30f38e;
@@ -134,40 +136,7 @@ input[type="radio"]:checked + label{
   box-shadow: 0 0 25px #e99518
   
 }
-.colBody label {
-  height: 30px;
-  width: 60px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  background-color: #454545;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 3px;
-}
-.colA{
-  width: 20%;
-  margin: 0 30px;
-  display: table-cell;
-  /* margin-right:40px; */
-}
-.colB{
-  width: 20%;
-  display: table-cell;
-}
-.colC{
-  width: 20%;
-  display: table-cell;
-}
-.colD{
-  width: 20%;
-  display: table-cell;
-}
-.colE{
-  width: 20%;
-  display: table-cell;
-}
+
 
 .pulse {
   cursor: pointer;
@@ -324,3 +293,51 @@ box-shadow: 10px 10px 5px #474542;
     opacity: 1;
   }
 }
+
+/* */
+strong{
+  color: #58ba83;
+}
+.transition{
+  transition: all .3s ease-out;
+}
+.heading{
+  text-align: center;
+  font-size:0.8em;
+  
+}
+.center-align{
+  width: 300px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: table;
+  margin-top: -40px;
+  margin-left: -150px;
+}
+
+input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+.col4 input{
+  margin-left:60px;
+}
+.col4 label {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  background-color: #454545;
+  color: white;
+  padding: 35px 40px;
+  border-radius: 3px;
+  .transition;
+}
+
+input[type="radio"]:checked + label{
+  background-color: #58ba83;
+}
+
