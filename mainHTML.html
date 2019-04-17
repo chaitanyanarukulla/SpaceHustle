@@ -5,19 +5,154 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Start page">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="author" content="Saurav Kadariya">
+  <title>Main</title>
   <link href='https://fonts.googleapis.com/css?family=Orbitron|Passion+One' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-  <link rel='stylesheet' href='css/main.css'>
-  <title>Document</title>
+  <!-- External .css file -->
+  <link rel='stylesheet' type='text/css' href='./css/main.css'>
 </head>
 <body>
-  <div class='typewriterBox'>
-    <div class="typewriter">
+    <div class='typewriterBox'>
+        <div class="typewriter">
         <h1>NOW ARRIVING AT SECTOR <label id='planetName'>[sectorname]</label>...</h1>
       </div>
     </div>
-</body>
-  <script src="js/main.js"></script>
+  <div class='section1'>
+
+  </div>
+  
+  <div class='section2'>
+    <div class='col1'>
+      <fieldset>
+        <legend>Sector Sats</legend>
+        <p>
+          <label>Fuel</label>
+          <input type='text' readonly id='sectorFuelStat'>
+        </p>
+        <p>
+          <label>Organic</label>
+          <input type='text' readonly id='sectorOraganicStat'>
+        </p>
+        <p>
+          <label>Equiments</label>
+          <input type='text' readonly id='sectorEquimentStat'>
+        </p>
+      </fieldset>
+    </div>
+    <div class='col2'>
+        <fieldset>
+          <legend>Buy/Sell</legend>
+          <p>
+            <button class='pulse' value =' 'id='sectorFuel'>
+            </button>
+          </p>
+          <p>
+            <button class='pulse' value =' '  id='sectorOrganic'>
+            </button>
+          </p>
+          <p>
+            <button class='pulse' value =' ' id='sectorEquipment'>
+            </button>
+          </p>
+        </fieldset>
+    </div>
+    <div class='col3'>
+      <fieldset>
+        <legend>Player Stats</legend>
+        <p>
+          <label>Fuel</label>
+          <input type='text' readonly id='userFuelStat'>
+        </p>
+        <p>
+          <label>Organic</label>
+          <input type='text' readonly id='userOrganicStat'>
+        </p>
+        <p>
+          <label>Equiments</label>
+          <input type='text' readonly id='userEquimentStat'>
+        </p>
+        <p>
+          <label>Turns</label>
+          <input type='text' readonly id='userFuelStat'>
+        </p>
+        <p>
+          <label>Credits</label>
+          <input type='text' readonly id='userFuelStat'>
+        </p>
+      </fieldset>
+    </div>
+    <div class='col4'>
+      <form id='nextQuest'>
+          <fieldset>
+              <legend>Next Quest</legend>
+              <div class='colHead'>
+                <button class='pulse' >Home</button>
+              </div>
+              <div class='colBody'>
+                <div class='colA'>
+                      <input type="radio" name="level" id="sector1" value="easy"/>
+                      <label for="sector1">Level A
+                      </label>
+                </div>
+                <div class='colB'>
+                      <input type="radio" name="level" id="sector2" value="easy" />
+                      <label for="sector2">Level B
+                      </label>
+                </div>
+                <div class='colC'>
+                    <input type="radio" name="level" id="sector3" value="easy" />
+                    <label for="sector3">Level C
+                    </label>
+                </div>
+                <div class='colD'>
+                    <input type="radio" name="level" id="sector4" value="easy" />
+                    <label for="sector4">Level D
+                    </label>
+                </div>
+                <div class='colE'>
+                  <input type="radio" name="level" id="sector5" value="easy"/>
+                  <label for="sector5">Level E
+                  </label>
+                </div>
+              </div>
+              <div class='colBody'>
+                  <div class='colA'>
+                        <input type="radio" name="level" id="sec1" value="easy"/>
+                        <label for="sec1">Visted
+                        </label>
+                  </div>
+                  <div class='colB'>
+                        <input type="radio" name="level" id="sec2" value="easy" />
+                        <label for="sec2">Visted
+                        </label>
+                  </div>
+                  <div class='colC'>
+                      <input type="radio" name="level" id="sec3" value="easy" />
+                      <label for="sec3">Not Visted
+                      </label>
+                  </div>
+                  <div class='colD'>
+                      <input type="radio" name="level" id="sec4" value="easy" />
+                      <label for="sec4">Not Visted
+                      </label>
+                  </div>
+                  <div class='colE'>
+                    <input type="radio" name="level" id="sec5" value="easy"/>
+                    <label for="sec5">Not Visted
+                    </label>
+                  </div>
+              </div>
+          </fieldset>
+      </form>
+    </div>
+</div>
+
+  <script src="./js/main.js"></script>
+  <script src='./js/create-universe.js.js'></script>
+
 </body>
 </html>

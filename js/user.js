@@ -12,12 +12,15 @@ var isFirst = true;
 
 //Is called in HTML upon form submission ------------------------------------------->
 function subbmitUserinfo() {
+  console.log('user.js running sumbitUserinfo');
   event.preventDefault();
   var userName = document.getElementById('userName').value;
   //userInfo is the id of the form and level is the name for all the radio buttons in that form
   var diffculity = getLevelValue(document.getElementById('userInfo'),'level');
   var shipName = document.getElementById('shipName').value;
   player = new User(userName,diffculity,shipName,proPic);
+  localStorage.setItem('update', JSON.stringify(player));
+
 }
 
 // User object has default game setting :------------------------------------------->
@@ -62,10 +65,19 @@ function getLevelValue(form,name){
   }
   return value;
 }
+console.log('player data:', player);
 //when user selects the profile pic---------------------------------------------->
 proPic.addEventListener('click',getProfileName);
 
+<<<<<<< HEAD
 /// Moves for function
 function move(){
   player
 }
+=======
+
+// function move(){
+//   player.currentSector = []
+  
+// }
+>>>>>>> aec72af39e88cdb0d1b70ab6b3471408f4f5c1fb
