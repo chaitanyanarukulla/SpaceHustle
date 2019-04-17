@@ -18,6 +18,8 @@ function subbmitUserinfo() {
   var diffculity = getLevelValue(document.getElementById('userInfo'),'level');
   var shipName = document.getElementById('shipName').value;
   player = new User(userName,diffculity,shipName,proPic);
+  localStorage.setItem('update', JSON.stringify(player));
+
 }
 
 // User object has default game setting :------------------------------------------->
@@ -61,3 +63,7 @@ function getLevelValue(form,name){
 proPic.addEventListener('click',getProfileName);
 
 
+// function move(){
+//   player.currentSector = []
+  
+// }
