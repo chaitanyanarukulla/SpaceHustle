@@ -77,11 +77,11 @@
         </p>
         <p>
           <label>Turns</label>
-          <input type='text' readonly id='userFuelStat'>
+          <input type='text' readonly id='userTurnStat'>
         </p>
         <p>
           <label>Credits</label>
-          <input type='text' readonly id='userFuelStat'>
+          <input type='text' readonly id='userCreditStat'>
         </p>
       </fieldset>
     </div>
@@ -90,32 +90,32 @@
           <fieldset>
               <legend>Next Quest</legend>
               <div class='colHead'>
-                <button class='pulse' >Home</button>
+                <button class='pulse' id='home' >Home</button>
               </div>
               <div class='colBody'>
                 <div class='colA'>
                       <input type="radio" name="level" id="sector1" value="easy"/>
-                      <label for="sector1">Level A
+                      <label id="sector1Name" for="sector1">Level A
                       </label>
                 </div>
                 <div class='colB'>
                       <input type="radio" name="level" id="sector2" value="easy" />
-                      <label for="sector2">Level B
+                      <label id="sector2Name" for="sector2">Level B
                       </label>
                 </div>
                 <div class='colC'>
                     <input type="radio" name="level" id="sector3" value="easy" />
-                    <label for="sector3">Level C
+                    <label id="sector3Name" for="sector3">Level C
                     </label>
                 </div>
                 <div class='colD'>
                     <input type="radio" name="level" id="sector4" value="easy" />
-                    <label for="sector4">Level D
+                    <label id="sector4Name" for="sector4">Level D
                     </label>
                 </div>
                 <div class='colE'>
                   <input type="radio" name="level" id="sector5" value="easy"/>
-                  <label for="sector5">Level E
+                  <label id="sector5Name" for="sector5">Level E
                   </label>
                 </div>
               </div>
@@ -152,7 +152,7 @@
 </div>
 
   <script src="./js/main.js"></script>
-  <script src='./js/create-universe.js.js'></script>
-
+  <script src='./js/create-universe.js'></script>
+  <script src='./js/main.js'></script>
 </body>
 </html>
