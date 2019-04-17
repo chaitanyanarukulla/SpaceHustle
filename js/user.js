@@ -32,15 +32,14 @@ var User = function(userName,level,shipName,proPic) {
   this.proPic = proPic;
   this.currentSector = 0;
   this.visitedSectorsArray = [];
-  this.currentHolds = 20;
-  this.turnsleft = 10;
-  this.credits = 100 ;
+  this.currentHolds = 500;
+  this.turnsleft = 50;
+  this.credits = 100000 ;
   this.maxHolds = 500;
   this.fuelHolds = 0;
   this.orgHolds = 0;
   this.equipHolds = 0;
-  this.maxHolds = 0;
-  // this.emptyHolds = (maxHolds - (fuelHolds + orgHolds + equipHolds));
+  this.emptyHolds = 500;
 };
 function getProfileName(){
   proPic = window.event.srcElement.id;
