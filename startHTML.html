@@ -9,6 +9,9 @@
   <meta name="author" content="Saurav Kadariya">
   <title>Start</title>
   <!-- External .css file -->
+  <link href='https://fonts.googleapis.com/css?family=Orbitron|Passion+One' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
   <link rel='stylesheet' type='text/css' href='./css/startStyle.css'>
 </head>
 <body>
@@ -22,14 +25,14 @@
       <div class='section1'>
         <h1>Select your avatar</h1>
         <div id='img'>
-          <img src='./assets/img/ship1.jpg' id='A'>
-          <img src='./assets/img/ship2.jpg' id='B'>
-          <img src='./assets/img/ship3.jpg' id='C'>
+          <img src='./assets/img/ship4-removebg.png' id='A'>
+          <img src='./assets/img/ship5-removebg2.png' id='B'>
+          <img src='./assets/img/ship6-removebg.png' id='C'>
         </div>
       </div>
       <form id='userInfo'>
         <div class='section2'>
-            <label for='name'>User Name</label></br>
+            <label for='name'> Name</label></br>
             <input type="text" name ='userName'id="userName" size ='35' required></br>
 
             <label for='name'>Ship Name</label></br>
@@ -46,7 +49,10 @@
           </div>
         </div>
         <div class='section4'>
-          <button onclick="subbmitUserinfo();">Start
+
+
+            <div class="flashit" id="startGame" type='' value = 'StartGame' onclick="subbmitUserinfo();"/><p>Launch!</p></div>
+
         </div>
       </form>
     </div>
