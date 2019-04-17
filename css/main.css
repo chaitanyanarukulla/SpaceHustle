@@ -1,6 +1,161 @@
-body {
+@import url(https://fonts.googleapis.com/css?family=Orbitron|Passion+One);
+
+body{
+  font-family: 'Orbitron', sans-serif;
   background-color: black;
 }
+input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5em;
+  padding: 1em 2em;
+}
+
+/*lower half of container */
+.section2{
+ margin-top:100px;
+ display:table;
+ width: 100%;
+}
+.col1{
+  width: 15%;
+  display:table-cell;
+}
+.col1 fieldset{
+  height: 210px;
+}
+.col1 p{ 
+  display: table-row;  
+}
+.col1 label{
+  display:table-cell;
+}
+.col1 input{ 
+  display: table-cell;
+  width: 20px;
+  height: 20px; 
+}
+
+.col2{
+  width:10%;
+  display:table-cell;
+  height: 300px;
+}
+.col2 fieldset{
+  height: 210px;
+}
+.col2 p{ 
+  display: table-row;  
+}
+.col2 input{ 
+  display: table-cell;
+  width: 90px;
+  height: 50px; 
+  text-align: center;
+  margin-right: 10px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.col3{
+  display:table-cell;
+  width:15%;
+}
+.col3 fieldset{
+  height: 210px;
+}
+.col3 p{ 
+  display: table-row;  
+}
+.col3 label{
+  display:table-cell;
+}
+.col3 input{ 
+  display: table-cell;
+  width: 20px;
+  height: 20px; 
+}
+.col4{
+  display:table-cell;
+  width:60%;
+}
+.col4 fieldset{
+  height: 210px;
+}
+.col4 button{
+ font-family: 'Orbitron',sans-serif;
+ padding: 15px 32px;
+ display: table-row;
+}
+.colHead{
+  text-align: center;
+  width: 100%;
+}
+.colBody{
+  display:table-row;
+  text-align: center;
+}
+input[type="radio"]:checked + label{
+  background-color:lightgreen;
+}
+input[type="radio"]:checked + label{
+  background-color:none;
+}
+.colBody label {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  background-color: #454545;
+  color: white;
+  padding: 15px 10px;
+  border-radius: 3px;
+}
+.colA{
+  width: 25%;
+  display: table-cell;
+  /* margin-right:40px; */
+}
+.colB{
+  width: 20%;
+  display: table-cell;
+}
+.colC{
+  width: 20%;
+  display: table-cell;
+}
+.colD{
+  width: 20%;
+  display: table-cell;
+}
+.colE{
+  width: 20%;
+  display: table-cell;
+}
+
+.pulse {
+  color: #20bf6b !important;
+  text-transform: uppercase;
+  background: #ffffff;
+  padding: 20px;
+  border: 4px solid #20bf6b !important;
+  border-radius: 1px;
+  display: inline-block;
+  }
+
+.pulse:hover {
+  color: #494949 !important;
+  border-radius: 50px;
+  border-color: #494949 !important;
+  transition: all 0.3s ease 0s;
+  }
+
 .typewriterBox {
   font-size: 75%;
   position: absolute;
