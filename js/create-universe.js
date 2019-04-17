@@ -1,8 +1,8 @@
 'use strict';
-
 let sectors = 100;
 let allPorts = [];
 let allSectors = [];
+
 let bigBangArray = [];
 let portClass = ['NO-PORT','Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8'];
 let name1 = ['orion','avatar','proxima','jupiter', 'barite', 'cana', 'pappus', 'bendor', 'catuz', 'new', 'old', 'zodiak', 'kodiak', 'creeper', 'lamblon', 'bevy', 'troy', 'zabion', 'zion', 'refurbished', 'xide', 'hellcat', 'buthcer', 'farley', 'micro', 'shadow', 'zip', 'zep', 'rider', 'alpha', 'omega', 'beta', 'zeta', 'pi', 'jaku', 'hoth', 'alderan', 'tatooine', 'maldacur', 'dantoine', 'degaboh', 'system', 'stellar'];
@@ -89,8 +89,8 @@ function rndSectorGenerator() {
 
 function setAllOtherSectors(){
   for(let i=11; i <=sectors; i++) {
-    console.log('The current Sector is', i);
-    console.log('The bigBangArray Length is: ', bigBangArray.length);
+    // console.log('The current Sector is', i);
+    // console.log('The bigBangArray Length is: ', bigBangArray.length);
     if (bigBangArray.length >= 6) {
       new SectGenerator(i, rndSectorGenerator(), rndSectorGenerator(), rndSectorGenerator(), rndSectorGenerator(), rndSectorGenerator(), rndSectorGenerator());
     } else if ((bigBangArray.length < 2) && (bigBangArray.length != 0)){
@@ -116,7 +116,7 @@ function getRandomNumber(min,max){
 }
 
 function capFirst(string) {
-  console.log(string);
+  // console.log(string);
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
