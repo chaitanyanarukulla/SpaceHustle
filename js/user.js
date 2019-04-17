@@ -65,19 +65,8 @@ function getLevelValue(form,name){
   }
   return value;
 }
+
 console.log('player data:', player);
 //when user selects the profile pic---------------------------------------------->
 proPic.addEventListener('click',getProfileName);
 
-<<<<<<< HEAD
-/// Moves for function
-function move(){
-  player
-}
-=======
-
-// function move(){
-//   player.currentSector = []
-  
-// }
->>>>>>> aec72af39e88cdb0d1b70ab6b3471408f4f5c1fb
