@@ -1,8 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Orbitron|Passion+One);
+/* @import url(https://fonts.googleapis.com/css?family=Orbitron|Passion+One); */
 
 body{
   font-family: 'Orbitron', sans-serif;
   background-color: black;
+  height: 100%;
+  color: #33ff00;
 }
 input[type="radio"]{
   visibility: hidden;
@@ -20,11 +22,15 @@ button {
 
 /*lower half of container */
 .section2{
- margin-top:100px;
- display:table;
- width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display:table;
+  width: 100%;
 }
 .col1{
+  bottom: 0;
   width: 15%;
   display:table-cell;
 }
@@ -32,23 +38,28 @@ button {
   height: 210px;
 }
 .col1 p{ 
+  margin-right: 10px;
   display: table-row;  
 }
 .col1 label{
+
   display:table-cell;
 }
 .col1 input{ 
+  margin-left: 20px;
   display: table-cell;
   width: 20px;
   height: 20px; 
 }
 
 .col2{
+  padding-bottom: 0;
   width:10%;
   display:table-cell;
   height: 300px;
 }
 .col2 fieldset{
+  text-align: center;
   height: 210px;
 }
 .col2 p{ 
@@ -77,6 +88,7 @@ button {
   display:table-cell;
 }
 .col3 input{ 
+  margin-left: 50px;
   display: table-cell;
   width: 20px;
   height: 20px; 
@@ -89,9 +101,9 @@ button {
   height: 210px;
 }
 .col4 button{
- font-family: 'Orbitron',sans-serif;
- padding: 15px 32px;
- display: table-row;
+  font-family: 'Orbitron',sans-serif;
+  padding: 15px 32px;
+  display: table-row;
 }
 .colHead{
   text-align: center;
