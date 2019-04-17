@@ -20,6 +20,7 @@ function subbmitUserinfo() {
   var shipName = document.getElementById('shipName').value;
   player = new User(userName,diffculity,shipName,proPic);
   localStorage.setItem('update', JSON.stringify(player));
+  window.open ('mainHTML.html','_self',false);eneccccbhljikcecelilftvtbegufldvbkkntcuftfjf
 
 }
 
@@ -29,7 +30,7 @@ var User = function(userName,level,shipName,proPic) {
   this.level = level;
   this.shipName = shipName;
   this.proPic = proPic;
-  this.currentSector = 1 ;
+  this.currentSector = 0;
   this.visitedSectorsArray = [];
   this.currentHolds = 20;
   this.turnsleft = 10;
