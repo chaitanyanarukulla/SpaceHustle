@@ -1,20 +1,10 @@
 let fuelMasterPrice = 100;
 let orgMasterPrice = 350;
 let equipMasterPrice = 800;
-let buyPercent = .9;
-let sellPercent = .5;
-let fuelHolds = 0;
-let orgHolds = 0;
-let equipHolds = 0;
-let maxHolds = 300;
-let emptyHolds = (maxHolds - (fuelHolds + orgHolds + equipHolds));
-let credits = 1000000;
+let emptyHolds = 0;
 let holdsToBuy = 0;
 let holdsToSell = 0;
 
-let portFuel = 3000;
-let portOrg = 3000;
-let portEquip = 3000;
 let buy = false;
 let sell = false;
 let fuel = false;
@@ -25,141 +15,111 @@ function product(){
   if (buy) { // THIS IS THE PORT PORT PORT Selling  (Player Buying)
     console.log('Buy is True');
     if (fuel) { // THIS IS THE PORT PORT PORT Selling  (Player Buying)
-      console.log('fuel is true for buy');
-      console.log('empty holds: ', emptyHolds);
-      console.log('port fuel: ', portFuel);
-      if (emptyHolds < portFuel) { // empty holds is less than fuel on the port
-        console.log('credits: ', credits);
-        console.log('fuelmasterprice: ', fuelMasterPrice);
-        console.log('sell %: ', sellPercent);
-        if (credits > (fuelMasterPrice * emptyHolds * sellPercent)) {
-          console.log('Credits available is more than the cost of the fuel');
-          console.log('credits: ', credits);
-          console.log('cost of product: ', (fuelMasterPrice * emptyHolds * sellPercent));
+      if (emptyHolds < allPorts[player.currentSector].fuel) { // empty holds is less than fuel on the port
+        console.log('sell %: ', allSectors[player.currentSector].sellPercent);
+        if (player.credits > (fuelMasterPrice * emptyHolds * allSectors[player.currentSector].sellPercent)) {
           holdsToBuy = emptyHolds;
         } else { // Only buying partial with credits on hand
-            holdsToBuy =  (credits / (fuelMasterPrice * sellPercent));
+            holdsToBuy =  (player.credits / (fuelMasterPrice * allSectors[player.currentSector].sellPercent));
         }
       } else { // empty holds is greater than port fuel
 
-        if (credits > (fuelMasterPrice * portFuel * sellPercent)) {
-          holdsToBuy = portFuel;
+        if (player.credits > (fuelMasterPrice * allPorts[player.currentSector].fuel * allSectors[player.currentSector].sellPercent)) {
+          holdsToBuy = allPorts[player.currentSector].fuel;
         } else { // Only buying partial with credits on hand
-            holdsToBuy = (portFuel - (credits * fuelMasterPrice * sellPercent));
+            holdsToBuy = (allPorts[player.currentSector].fuel - (player.credits * fuelMasterPrice * allSectors[player.currentSector].sellPercent));
         }
       }
-      fuelHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
-      credits -= (fuelMasterPrice * holdsToBuy * sellPercent);
-      portFuel -= holdsToBuy; // Reduce port product
+      player.fuelHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
+      player.credits -= (fuelMasterPrice * holdsToBuy * allSectors[player.currentSector].sellPercent);
+      allPorts[player.currentSector].fuel -= holdsToBuy; // Reduce port product
       emptyHolds -= holdsToBuy;
     }
 
     if (org) { // THIS IS THE PORT PORT PORT Selling  (Player Buying)
-      console.log('org is true for buy');
-      console.log('empty holds: ', emptyHolds);
-      console.log('port org: ', portOrg);
-      if (emptyHolds < portOrg) { // empty holds is less than fuel on the port
-        console.log('credits: ', credits);
-        console.log('orgmasterprice: ', orgMasterPrice);
-        console.log('sell %: ', sellPercent);
-        if (credits > (orgMasterPrice * emptyHolds * sellPercent)) {
-          console.log('Credits available is more than the cost of the org');
-          console.log('credits: ', credits);
-          console.log('cost of product: ', (orgMasterPrice * emptyHolds * sellPercent));
+      if (emptyHolds < allPorts[player.currentSector].organics) { // empty holds is less than fuel on the port
+        if (player.credits > (orgMasterPrice * emptyHolds * allSectors[player.currentSector].sellPercent)) {
           holdsToBuy = emptyHolds;
         } else { // Only buying partial with credits on hand
-            holdsToBuy = (credits / (orgMasterPrice * sellPercent));
+            holdsToBuy = (player.credits / (orgMasterPrice * allSectors[player.currentSector].sellPercent));
         }
       } else { // empty holds is greater than port fuel
 
-        if (credits > (orgMasterPrice * portOrg * sellPercent)) {
-          holdsToBuy = portOrg;
+        if (player.credits > (orgMasterPrice * allPorts[player.currentSector].organics * allSectors[player.currentSector].sellPercent)) {
+          holdsToBuy = allPorts[player.currentSector].organics;
         } else { // Only buying partial with credits on hand
-            holdsToBuy = (portOrg - (credits * orgMasterPrice * sellPercent));
+            holdsToBuy = (allPorts[player.currentSector].organics - (player.credits * orgMasterPrice * allSectors[player.currentSector].sellPercent));
         }
       }
-      orgHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
-      credits -= (orgMasterPrice * holdsToBuy * sellPercent);
-      portOrg -= holdsToBuy; // Reduce port product
+      player.orgHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
+      player.credits -= (orgMasterPrice * holdsToBuy * allSectors[player.currentSector].sellPercent);
+      allPorts[player.currentSector].organics -= holdsToBuy; // Reduce port product
       emptyHolds -= holdsToBuy;
     }
 
     if (equip) { // THIS IS THE PORT PORT PORT Selling  (Player Buying)
-      console.log('equip is true for buy');
-      console.log('empty holds: ', emptyHolds);
-      console.log('port equip: ', portEquip);
-      if (emptyHolds < portEquip) { // empty holds is less than fuel on the port
-        console.log('credits: ', credits);
-        console.log('equipmasterprice: ', equipMasterPrice);
-        console.log('sell %: ', sellPercent);
-        if (credits > (equipMasterPrice * emptyHolds * sellPercent)) {
-          console.log('Credits available is more than the cost of the equip');
-          console.log('credits: ', credits);
-          console.log('cost of product: ', (equipMasterPrice * emptyHolds * sellPercent));
+      if (emptyHolds < allPorts[player.currentSector].equipment) { // empty holds is less than fuel on the port
+        if (player.credits > (equipMasterPrice * emptyHolds * allSectors[player.currentSector].sellPercent)) {
           holdsToBuy = emptyHolds;
         } else { // Only buying partial with credits on hand
-            holdsToBuy = (credits / (equipMasterPrice * sellPercent));
+            holdsToBuy = (player.credits / (equipMasterPrice * allSectors[player.currentSector].sellPercent));
         }
       } else { // empty holds is greater than port fuel
 
-        if (credits > (equipMasterPrice * portEquip * sellPercent)) {
-          holdsToBuy = portEquip;
+        if (player.credits > (equipMasterPrice * allPorts[player.currentSector].equipment * allSectors[player.currentSector].sellPercent)) {
+          holdsToBuy = allPorts[player.currentSector].equipment;
         } else { // Only buying partial with credits on hand
-            holdsToBuy = (portEquip - (credits * equipMasterPrice * sellPercent));
+            holdsToBuy = (allPorts[player.currentSector].equipment - (player.credits * equipMasterPrice * allSectors[player.currentSector].sellPercent));
         }
       }
-      equipHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
-      credits -= (equipMasterPrice * holdsToBuy * sellPercent);
-      portEquip -= holdsToBuy; // Reduce port product
+      player.equipHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
+      player.credits -= (equipMasterPrice * holdsToBuy * allSectors[player.currentSector].sellPercent);
+      allPorts[player.currentSector].equipment -= holdsToBuy; // Reduce port product
       emptyHolds -= holdsToBuy;
     }
   }
 
   if (sell) { // THIS IS THE PORT PORT PORT Buying.  The player is selling
-    console.log('sell is true');
       if (fuel) { // THIS IS THE PORT PORT PORT Buying.  The player is selling
-        console.log('fuel is true for sell');
-        if (fuelHolds < portFuel) { // Fuel holds less than what the port is buying
-          holdsToSell = fuelHolds;
+        if (player.fuelHolds < allPorts[player.currentSector].fuel) { // Fuel holds less than what the port is buying
+          holdsToSell = player.fuelHolds;
         } else { // fuel holds is more than what the port is buying
-          holdsToSell = portFuel;
+          holdsToSell = allPorts[player.currentSector].fuel;
         }
-        fuelHolds -= holdsToSell;
-        credits += (holdsToSell * buyPercent * fuelMasterPrice);
+        player.fuelHolds -= holdsToSell;
+        player.credits += (holdsToSell * allSectors[player.currentSector].buyPercent * fuelMasterPrice);
         emptyHolds += holdsToSell;
       }
       if (org) { // THIS IS THE PORT PORT PORT Buying.  The player is selling
-        console.log('org is true for sell');
-        if (orgHolds < portFuel) { // Fuel holds less than what the port is buying
-          holdsToSell = orgHolds;
+        if (player.orgHolds < allPorts[player.currentSector].organics) { // Fuel holds less than what the port is buying
+          holdsToSell = player.orgHolds;
         } else { // fuel holds is more than what the port is buying
-          holdsToSell = portOrg;
+          holdsToSell = allPorts[player.currentSector].organics;
         }
-        orgHolds -= holdsToSell;
-        credits += (holdsToSell * buyPercent * orgMasterPrice);
+        player.orgHolds -= holdsToSell;
+        player.credits += (holdsToSell * allSectors[player.currentSector].buyPercent * orgMasterPrice);
         emptyHolds += holdsToSell;
       }
       if (equip){ // THIS IS THE PORT PORT PORT Buying.  The player is selling
-        console.log('equip is true for sell');
-        if (fuelHolds < portEquip) { // Fuel holds less than what the port is buying
-          holdsToSell = equipHolds;
+        if (player.fuelHolds < allPorts[player.currentSector].equipment) { // Fuel holds less than what the port is buying
+          holdsToSell = player.equipHolds;
         } else { // fuel holds is more than what the port is buying
-          holdsToSell = portEquip;
+          holdsToSell = allPorts[player.currentSector].equipment;
         }
-        equipHolds -= holdsToSell;
-        credits += (holdsToSell * buyPercent * equipMasterPrice);
+        player.equipHolds -= holdsToSell;
+        player.credits += (holdsToSell * allSectors[player.currentSector].buyPercent * equipMasterPrice);
         emptyHolds += holdsToSell;
       }
   }
-  // displayData();
+  display();
 }
 
 function display(){
-  console.log('Current Credits: ', credits);
+  console.log('Current Credits: ', player.credits);
   console.log('BUY | SELL: ', buy, ' | ', sell);
   console.log('FUEL | ORG | EQUIP:', fuel, ' | ', org, ' | ', equip);
-  console.log('Max Holds: | EMPTY HOLDS', maxHolds, ' | ', emptyHolds);
-  console.log('Holds: Fuel | Org | Equip : ', fuelHolds, ' | ', orgHolds, ' | ', equipHolds);
-  console.log('Port:  Fuel | Org | Equip: ',portFuel, ' | ', portOrg, ' | ', portEquip);
+  console.log('Max Holds: | EMPTY HOLDS', player.maxHolds, ' | ', emptyHolds);
+  console.log('Holds: Fuel | Org | Equip : ', player.fuelHolds, ' | ', player.orgHolds, ' | ', player.equipHolds);
+  console.log('Port:  Fuel | Org | Equip: ',allPorts[player.currentSector].fuel, ' | ', allPorts[player.currentSector].organics, ' | ', allPorts[player.currentSector].equipment);
 }
 
