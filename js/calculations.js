@@ -38,7 +38,7 @@ function product(){
           console.log('cost of product: ', (fuelMasterPrice * emptyHolds * sellPercent));
           holdsToBuy = emptyHolds;
         } else { // Only buying partial with credits on hand
-            holdsToBuy = (emptyHolds - (credits * fuelMasterPrice * sellPercent));
+            holdsToBuy =  (credits / (fuelMasterPrice * sellPercent));
         }
       } else { // empty holds is greater than port fuel
 
@@ -68,7 +68,7 @@ function product(){
           console.log('cost of product: ', (orgMasterPrice * emptyHolds * sellPercent));
           holdsToBuy = emptyHolds;
         } else { // Only buying partial with credits on hand
-            holdsToBuy = (emptyHolds - (credits * orgMasterPrice * sellPercent));
+            holdsToBuy = (credits / (orgMasterPrice * sellPercent));
         }
       } else { // empty holds is greater than port fuel
 
@@ -98,7 +98,7 @@ function product(){
           console.log('cost of product: ', (equipMasterPrice * emptyHolds * sellPercent));
           holdsToBuy = emptyHolds;
         } else { // Only buying partial with credits on hand
-            holdsToBuy = (emptyHolds - (credits * equipMasterPrice * sellPercent));
+            holdsToBuy = (credits / (equipMasterPrice * sellPercent));
         }
       } else { // empty holds is greater than port fuel
 
