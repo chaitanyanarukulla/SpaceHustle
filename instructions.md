@@ -11,7 +11,7 @@ As you travel through the universe, you will come across ports that buy or sell 
 ╒╤════════════════════════════╤╤════════╤╕
 ││   StarPort                 ││ Import ││
 ╞╪════════════╤═══════════════╡│   or   ││
-││ Port Class │ Ore  Org  Equ ││ Export ││
+││ Port Class │ Fuel Org  Equ ││ Export ││
 ╞╪════════════╪═══════════════╡╞════════╪╡
 ││     1      │  B    B    S  ││ Import ││
 ││     2      │  B    S    B  ││ Import ││
@@ -21,8 +21,7 @@ As you travel through the universe, you will come across ports that buy or sell 
 ││     6      │  B    S    S  ││ Export ││
 ││     7      │  S    S    S  ││ Export ││
 ││     8      │  B    B    B  ││ Import ││
-││     9      │ Not Available ││ ------ ││
-││     0      │ Not Available ││ ------ ││
+││     9      │ Sector 1 Only ││ ------ ││
 ╞╪════════════╧═══════════════╧╧════════╪╡
 ││                                      ││
 ╘╧══════════════════════════════════════╧╛
