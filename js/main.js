@@ -8,6 +8,7 @@ $(window).load(function() {
 var data = JSON.parse(localStorage.update);
 //array to hold rules of Buy and Sell based on class name
 var buySellRule=[];
+var sectorName = document.getElementById('planetName');
 
 function updatePlayerStats(){
   var fuel = document.getElementById('userFuelStat');
@@ -16,11 +17,11 @@ function updatePlayerStats(){
   var cre = document.getElementById('userCreditStat');
   var turn = document.getElementById('userTurnStat');
   console.log(data.fuelHolds);
-  fuel.value = data.fuelHolds;
-  org.value = data.orgHolds;
-  equ.value = data.equipHolds;
-  cre.value = data.credits;
-  turn.value = data.turnsleft;
+  fuel.innerHTML = data.fuelHolds;
+  org.innerHTML = data.orgHolds;
+  equ.innerHTML = data.equipHolds;
+  cre.innerHTML = data.credits;
+  turn.innerHTML = data.turnsleft;
 }
 //load sector's stat
 function updateSectorStats(){
@@ -29,9 +30,11 @@ function updateSectorStats(){
   var equ = document.getElementById('sectorEquimentStat');
   var curSec = data.currentSector;
 
-  fuel.value = allPorts[curSec].fuel;
-  org.value = allPorts[curSec].organics;
-  equ.value = allPorts[curSec].equipment;
+  fuel.innerHTML = allPorts[curSec].fuel;
+  org.innerHTML = allPorts[curSec].organics;
+  equ.innerHTML = allPorts[curSec].equipment;
+  sectorName.innerHTML = ': ' +allSectors[allPorts[curSec].portSector].sectorName;
+
 }
 //Buy and Sell stats
 function buySellStats(){
@@ -86,18 +89,22 @@ function sectorRules(className){
 }
 //next quest logic
 function updateNextQuest(){
-  var sector1 = document.getElementById('sector1Name');
-  var sector2 = document.getElementById('sector2Name');
-  var sector3 = document.getElementById('sector3Name');
-  var sector4 = document.getElementById('sector4Name');
-  var sector5 = document.getElementById('sector5Name');
-  // sector1.innerHTML = data.
-  // sector1.innerHTML = data.
-  // sector1.innerHTML = data.
-  // sector1.innerHTML = data.
-  // sector1.innerHTML = data.
+  var sec1 = document.getElementById('sector1Name');
+  var sec2 = document.getElementById('sector2Name');
+  var sec3 = document.getElementById('sector3Name');
+  var sec4 = document.getElementById('sector4Name');
+  var sec5 = document.getElementById('sector5Name');
+  var curSec = data.currentSector;
+  var outLet = allSectors[curSec].sectorsOut;
+
+  sec1.innerHTML = outLet[0];
+  sec2.innerHTML = outLet[1];
+  sec3.innerHTML = outLet[2];
+  sec4.innerHTML = outLet[3];
+  sec5.innerHTML = outLet[4];
 }
 
 updateSectorStats();
 buySellStats();
 updatePlayerStats();
+updateNextQuest();
