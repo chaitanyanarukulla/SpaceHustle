@@ -2,8 +2,28 @@ $(window).load(function() {
   //Animate loader off screen
   setInterval(function() {
     $(".se-pre-con").fadeOut("slow");
+  }, 1800);
+  setInterval(function() {
+    $("#portImg").addClass("fadein");
   }, 2000);
 });
+
+$(document).ready(function() {
+  $('.hyperdrive').hover(function() {
+    $(this).html('HYPERDRIVE READY!!');
+  }, function() {
+    $(this).html('HYPERDRIVE');
+  });
+});
+
+$(document).ready(function() {
+  $('.home').hover(function() {
+    $(this).html('Warning!');
+  }, function() {
+    $(this).html('Recall');
+  });
+});
+
 // getting data from local storage
 var data = JSON.parse(localStorage.update);
 //array to hold rules of Buy and Sell based on class name
