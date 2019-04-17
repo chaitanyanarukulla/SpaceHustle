@@ -125,7 +125,6 @@ function generateName(){
 	return name;
 }
 
-
 // Testing Function to validate there are no 0 Warp sectors.
 function validateUniverse(){
   for (let i=0; i < maxSectors; i++){
