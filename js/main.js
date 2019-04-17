@@ -47,7 +47,7 @@ function buySellStats(){
   index++;
   equ.innerHTML = buySellRule[index];
 }
-
+// to fill the array of buySellRule rules
 function sectorRules(className){
   //NO-PORT','Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8'
   if(className==='NO-PORT'){
@@ -85,19 +85,19 @@ function sectorRules(className){
   }
 }
 //next quest logic
-// function updateNextQuest(){
-//   var sector1 = document.getElementById('sector1Name');
-//   var sector2 = document.getElementById('sector2Name');
-//   var sector3 = document.getElementById('sector3Name');
-//   var sector4 = document.getElementById('sector4Name');
-//   var sector5 = document.getElementById('sector5Name');
-//   // sector1.innerHTML = data.
-//   // sector1.innerHTML = data.
-//   // sector1.innerHTML = data.
-//   // sector1.innerHTML = data.
-//   // sector1.innerHTML = data.
-// }
+function updateNextQuest(){
+  var sector1 = document.getElementById('sector1Name');
+  var sector2 = document.getElementById('sector2Name');
+  var sector3 = document.getElementById('sector3Name');
+  var sector4 = document.getElementById('sector4Name');
+  var sector5 = document.getElementById('sector5Name');
+  // sector1.innerHTML = data.
+  // sector1.innerHTML = data.
+  // sector1.innerHTML = data.
+  // sector1.innerHTML = data.
+  // sector1.innerHTML = data.
+}
 
-// updateSectorStats();
-// buySellStats();
-// updatePlayerStats();
+updateSectorStats();
+buySellStats();
+updatePlayerStats();
