@@ -20,7 +20,7 @@ function subbmitUserinfo() {
   var shipName = document.getElementById('shipName').value;
   player = new User(userName,diffculity,shipName,proPic);
   localStorage.setItem('update', JSON.stringify(player));
-
+  window.open ('mainHTML.html','_self',false);
 }
 
 // User object has default game setting :------------------------------------------->
