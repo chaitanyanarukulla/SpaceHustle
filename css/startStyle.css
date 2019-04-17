@@ -2,32 +2,33 @@
 This is the style for the start page
 */
 /* Card contains all the sections inside it */
-@import url(https://fonts.googleapis.com/css?family=Orbitron|Passion+One);
-
 /* User Interface or data: font-family: 'Passion One', cursive; */
-body{
+body {
   font-family: 'Orbitron', sans-serif;
 }
-img{
+img {
   height:290px;
   width:360px;
   border-radius: 94%;
   opacity: 0.7;
 }
-img:hover{
+img: hover {
   opacity: 1;
 }
-h1{
-  color: brown;
+
+h1 {
+  color: #e99518;
   font-size: 35px;
 }
-label{
-  color:white;
+
+label {
+  color: #e99518;
   font-size: 34px;
 }
-h2{
+
+h2 {
   font-size: 30px;
-  color:white;
+  color: #e99518;
 }
 
 * { box-sizing: border-box; }
@@ -37,6 +38,7 @@ h2{
   top: 0; right: 0; bottom: 0; left: 0;
   z-index: -99;
 }
+
 input {
   display: block;
   transition: .3s ease;
@@ -66,21 +68,23 @@ input {
 @media all and (max-width: 500px) {
 .vid-info .acronym { display: none; }
 }
+
 .card{
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
 .section1{
+  text-align: center;
   margin-top:50px;
 }
 .section2{
+  text-align: center;
   margin-top:50px;
-  text-align:center;
 }
 .section2 input{
-  margin-left:10px;
   text-align: center;
+  margin-left:10px;
   display: inline-block;
   height: 40px;
   margin-top:10px;
@@ -92,28 +96,22 @@ style for the userName and shipName
 */
 
 .section3{
+  text-align: center;
   margin-top:50px;
 }
+.section3 label{
+  font-size: 20px;
+  width: 200px;
+}
 .section3 input{
-  font-size:35px;
-  color:wheat;
-  background-image: linear-gradient(to right, #003973 0%, #E5E5BE 51%, #003973 100%)
+  /* margin-top:10px;
+  background-image: linear-gradient(to right, #003973 0%, #E5E5BE 51%, #003973 100%) */
 }
 .section3 button:hover{ 
   background-position: right center; 
 }
 .section4{
   margin-top: 50px;
-}
-.section4 button{
-  font-size:25px;
-  font-family: 'Orbitron', sans-serif;
-  background-color: #454545;
-  color: white;
-  padding: 35px 40px;
-}
-.section4 button:hover{ 
-  background-color: aqua;
 }
 
 /* 
@@ -153,6 +151,32 @@ input[type="radio"]{
 }
 
 input[type="radio"]:checked + label{
-  background-color:lightgreen;
+  background-color:#e99518;
 }
 
+.flashit{
+  transition-duration: .5s;
+  font-size:25px;
+  font-family: 'Orbitron', sans-serif;
+  color: #e99518;
+  display: block;
+	-webkit-animation: flash linear 2s infinite;
+	animation: flash linear 2s infinite;}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+
+#startGame:hover {
+  font-family: 'Orbitron', sans-serif;
+  color:white;
+-webkit-transform:rotate(-1deg);
+  transform:rotate(-2deg);
+  transform: scale(2);
+  transition-duration: .5s;
+}
