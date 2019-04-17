@@ -12,6 +12,7 @@ var isFirst = true;
 
 //Is called in HTML upon form submission ------------------------------------------->
 function subbmitUserinfo() {
+  console.log('user.js running sumbitUserinfo');
   event.preventDefault();
   var userName = document.getElementById('userName').value;
   //userInfo is the id of the form and level is the name for all the radio buttons in that form
@@ -59,6 +60,7 @@ function getLevelValue(form,name){
   }
   return value;
 }
+console.log('player data:', player);
 //when user selects the profile pic---------------------------------------------->
 proPic.addEventListener('click',getProfileName);
 
