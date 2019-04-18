@@ -20,8 +20,16 @@ $(document).ready(function() {
 var data = JSON.parse(localStorage.update);
 //array to hold rules of Buy and Sell based on class name
 var buySellRule=[];
+//to update the planet name
 var sectorName = document.getElementById('planetName');
+//to next information about which sector user is going next
+var nextSector = document.getElementById('hyper');
+//logic for BUY/SELL , what all is user doing 
+var tradeBtn1 = document.getElementById('sectorFuel');
+var tradeBtn2 = document.getElementById('sectorOrganic');
+var tradeBtn3 = document.getElementById('sectorEquipment');
 
+// User object has default game setting :------------------------------------------->
 function updatePlayerStats(){
   var fuel = document.getElementById('userFuelStat');
   var org = document.getElementById('userOrganicStat');
@@ -35,7 +43,7 @@ function updatePlayerStats(){
   cre.innerHTML = data.credits;
   turn.innerHTML = data.turnsleft;
 }
-//load sector's stat
+//load sector's stat :------------------------------------------->
 function updateSectorStats(){
   var fuel = document.getElementById('sectorFuelStat');
   var org = document.getElementById('sectorOraganicStat');
@@ -48,7 +56,7 @@ function updateSectorStats(){
   sectorName.innerHTML = allSectors[allPorts[curSec].portSector].sectorName;
 
 }
-//Buy and Sell stats
+//Buy and Sell stats :------------------------------------------->
 function buySellStats(){
   var fuel = document.getElementById('sectorFuel');
   var org = document.getElementById('sectorOrganic');
@@ -61,8 +69,15 @@ function buySellStats(){
   org.innerHTML = buySellRule[index];
   index++;
   equ.innerHTML = buySellRule[index];
+  //now setting the values in the button such that inner logic can be used
+  index = 0;
+  fuel.value = buySellRule[index];
+  index++;
+  org.value = buySellRule[index];
+  index++;
+  equ.value = buySellRule[index];
 }
-// to fill the array of buySellRule rules
+// to fill the array of buySellRule rules :------------------------------------------->
 function sectorRules(className){
   //NO-PORT','Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8'
   if(className==='NO-PORT'){
@@ -99,7 +114,7 @@ function sectorRules(className){
     buySellRule=['No Stock','No Stock','No Stock'];
   }
 }
-//next quest logic
+//next quest logic :------------------------------------------->
 function updateNextQuest(){
   var sec1 = document.getElementById('sec1Nm');
   var sec2 = document.getElementById('sec2Nm');
@@ -126,20 +141,50 @@ function updateNextQuest(){
   input4.value = outLet[3];
   input5.value = outLet[4];
 }
+//change background to the visited sector :------------------------------------------->
 function updateSectorVisted(){
-  var sec1 = document.getElementById('sec1Nm');
-  var sec2 = document.getElementById('sec2Nm');
-  var sec3 = document.getElementById('sec3Nm');
-  var sec4 = document.getElementById('sec4Nm');
-  var sec5 = document.getElementById('sec5Nm');
+  //array to hold all label from html
+  var toUpdate = [];
+  var visitedSec = data.visitedSectorsArray;
   var curSec = data.currentSector;
   var outLet = allSectors[curSec].sectorsOut;
-  for(var i = 0 ; i < 5; i++){
-    
+
+  toUpdate.push(document.getElementById('sec1Nm'));
+  toUpdate.push(document.getElementById('sec2Nm'));
+  toUpdate.push(document.getElementById('sec3Nm'));
+  toUpdate.push(document.getElementById('sec4Nm'));
+  toUpdate.push(document.getElementById('sec5Nm'));
+
+  for(var i = 0 ; i < visitedSec.length; i++){
+    if(outLet.includes(visitedSec[i])){
+      toUpdate[i].classList.add('didIt');
+    }
   }
 }
-updateSectorStats();
-buySellStats();
-updatePlayerStats();
-updateNextQuest();
-updateSectorVisted();
+//upon page load :------------------------------------------->
+function pageLoad(){
+  updateSectorStats();
+  buySellStats();
+  updatePlayerStats();
+  updateNextQuest();
+  updateSectorVisted();
+}
+//going to the next sector, get called upon click :------------------------------------------->
+function next(){
+  data = JSON.parse(localStorage.update);
+  buySellRule=[];
+  pageLoad();
+}
+//trading based on sections stat, get called upon the click:------------------------------------------->
+function trade(){
+  
+}
+
+pageLoad();
+nextSector.addEventListener('click','next');
+tradeBtn1.addEventListener('click','trade');
+tradeBtn1.addEventListener('click','trade');
+tradeBtn1.addEventListener('click','trade');
+
+
+
