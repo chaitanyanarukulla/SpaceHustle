@@ -9,6 +9,8 @@
   <meta name="keywords" content="HTML,CSS,JavaScript">
   <meta name="author" content="Saurav Kadariya">
   <title>Main</title>
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png">
   <link href='https://fonts.googleapis.com/css?family=Orbitron|Passion+One' rel='stylesheet'>
   <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
@@ -18,29 +20,30 @@
 <body>
     <div class='typewriterBox'>
         <div class="typewriter">
-        <h1>NOW ARRIVING AT SECTOR<label id='planetName'>[sectorname]</label>...</h1>
+        <h1><span class="fadeout">NOW ARRIVING AT SECTOR: </span><label id='planetName'>[sectorname]</label><span class="fadeout">....</span></h1>
       </div>
     </div>
     <div class='portBox'>
-      <img id='portImg' src='./assets/port/2.gif' alt="">
+      <img id='portImg' src='./assets/port/1.gif' alt="">
     </div>
   <div class='section2'>
+
     <div class='col1'>
       <fieldset>
         <legend>Sector Stats</legend>
         <p>
           <label>Fuel : </label>
-          <label id='sectorFuelStat'></label>
+          <label class="playerStats" id='sectorFuelStat'></label>
         </p>
         <br>
         <p>
           <label>Organic : </label>
-          <label  id='sectorOraganicStat'></label>
+          <label class="playerStats" id='sectorOraganicStat'></label>
         </p>
         <br>
         <p>
           <label>Equiments : </label>
-          <label id='sectorEquimentStat'></label>
+          <label class="playerStats" id='sectorEquimentStat'></label>
         </p>
       </fieldset>
     </div>
@@ -66,27 +69,27 @@
         <legend>Cargo Status</legend>
         <p>
           <label>Fuel :</label>
-          <label id='userFuelStat'></label>
+          <label class="playerStats" id='userFuelStat'></label>
         </p>
         <br>
         <p>
           <label>Organic :</label>
-          <label id='userOrganicStat'></label>
+          <label class="playerStats" id='userOrganicStat'></label>
         </p>
         <br>
         <p>
           <label>Equiments :</label>
-          <label id='userEquimentStat'></label>
+          <label class="playerStats" id='userEquimentStat'></label>
         </p>
         <br>
         <p>
           <label>Turns :</label>
-          <label id='userTurnStat'></label>
+          <label class="playerStats" id='userTurnStat'></label>
         </p>
         <br>
         <p>
           <label>Credits :</label>
-          <label id='userCreditStat'></label>
+          <label class="playerStats" id='userCreditStat'></label>
         </p>
       </fieldset>
     </div>
@@ -96,16 +99,16 @@
           <fieldset>
               <legend>Navigation</legend>
               <div class='colHead'>
-                <button class='pulse hyperdrive' id='hyper'>HYPERDRIVE</button>
+                <button class='pulse hyperdrive' id='hyper'><a class="flashit" id='hyperText'>CHARGING......</a></button>
                 <button class='home' id='home' title='Recall'>Recall</button>
               </div>
               <div class="center-align"> 
 
-                <input type="radio" name="size" id="sec1" checked />
-                 <label id="sec1Nm"for="sec1"></label>
+                <input type="radio" name="size" id="sec1" />
+                <label id="sec1Nm"for="sec1"></label>
 
-                 <input type="radio" name="size" id="sec2" />
-                 <label id="sec2Nm"for="sec2"></label>
+                <input type="radio" name="size" id="sec2" />
+                <label id="sec2Nm"for="sec2"></label>
 
                 <input type="radio" name="size" id="sec3" />
                 <label id="sec3Nm" for="sec3"></label>
@@ -117,12 +120,41 @@
                 <label id="sec5Nm" for="sec5"></label>
                 </div>
           </fieldset>
+          
       </form>
     </div>
 </div>
     <script src='./js/create-universe.js'></script>
     <script src="./js/main.js"></script>
     <script src="./js/calculations.js"></script>
+    <script>
+      $(document).ready(function(){
+      setTimeout(function() {
+        move();
+        console.log('running hyper animation.');
+        }, 8000);
+      });
+
+    function move() {
+    var elem = document.getElementById("hyper");   
+    var elemText = document.getElementById("hyperText");  
+    var width = 20;
+    var id = setInterval(frame, 80);
+    function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+      elem.classList.remove('pulse');
+      elem.classList.add('pulseReady');
+      elemText.innerHTML = 'WARPDRIVE READY!';
+      } else {
+        width++; 
+        elem.style.width = width + '%';
+        elemText.innerHTML = width * 1  + '%'; 
+      }
+    }
+    
+  }
+    </script>
   
 </body>
 </html>

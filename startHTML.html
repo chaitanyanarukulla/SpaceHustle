@@ -7,6 +7,8 @@
   <meta name="description" content="Start page">
   <meta name="keywords" content="HTML,CSS,JavaScript">
   <meta name="author" content="Saurav Kadariya">
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png">
   <title>Start</title>
   <!-- External .css file -->
   <link href='https://fonts.googleapis.com/css?family=Orbitron|Passion+One' rel='stylesheet'>
@@ -17,19 +19,15 @@
 <body>
     <div class='card'>
       <div class='section1'>
-        <h1>Select your avatar</h1>
-        <!-- <div id='img'>
-          <img src='./assets/img/ship4-removebg.png' id='A'>
-          <img src='./assets/img/ship5-removebg2.png' id='B'>
-          <img src='./assets/img/ship6-removebg.png' id='C'>
-        </div> -->
       </div>
       <form id='userInfo'>
         <div class='section2'>
             <label for='name'>Player Name</label></br>
-            <input type="text" name ='userName'id="userName" size ='35' required></br>
-            <label for='name'>Ship Name</label></br>
-            <input type="text" name ='shipName'id="shipName" size ='35'required>
+            <input type="text" name='userName'id="userName" size='35' required>
+            <br>
+            <!-- Game design change: removed ship naming feature -->
+            <!-- <label for='name'>Ship Name</label></br> -->
+            <input type="hidden" name='shipName' id="shipName" size ='35'required>
         </div>
         <div class='section3'>
           <div class="center-align">
@@ -48,5 +46,13 @@
     </div>
 </body>
 <script src='./js/user.js'></script>
-<script src='./js/main.js'></script>
+<!-- <script src='./js/main.js'></script> -->
+<script>
+  $("*").addClass("fadein");
+    $('#startGame').hover(function() {
+      $(this).html('Launch!!');
+    }, function() {
+      $(this).html('Ready?');
+    });
+</script>
 </html>

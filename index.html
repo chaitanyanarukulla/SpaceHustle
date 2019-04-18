@@ -3,13 +3,13 @@
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Space Hustle</title>
-
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/index.css">
     <link href='https://fonts.googleapis.com/css?family=Orbitron|Passion+One' rel='stylesheet'>
-
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/favicon.png">
     <!-- Letter animation RE: TweenMax-->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js'></script>
@@ -26,7 +26,7 @@
 
     <section class='homebackground'>
       <div class='wrapbox'>
-        <h1 class='titlewrapper'>
+        <h1 id="title" class='titlewrapper'>
           <span class='maintitle' style="font-family: 'Passion One', cursive;">Space Hustle</span>
           <span class='maintitle' style="font-family: 'Orbitron', sans-serif;">Get them Credits, Partner!</span>
         </h1>
@@ -44,20 +44,24 @@
     <script>
       // Title animation
       $(document).ready(function(){
-      $('.maintitle').lettering();
+      // Hide Title on load to allow animation to look more fluid
+      document.getElementById("title").style.opacity = 0;
+      // SetTimeout for background to load
       setTimeout(function() {
+        $('.maintitle').lettering();
         animation();
         console.log('running letter animation.');
-        }, 500);
+        }, 2000);
       });
       function animation() {
+        setTimeout(function() {
+        // Restore Title opacity right before animation start
+        document.getElementById("title").style.opacity = 1;
         var title1 = new TimelineMax();
         title1.staggerFromTo('.maintitle span', 0.5, {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -80},{ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.10);
+        }, 1000);
       }
+    localStorage.clear();
     </script>
-    <script src="./js/main.js"></script>
-    <script src="./js/user.js"></script>
-    <script src='./js/create-universe.js'></script>
-    <script src="./js/calculations.js"></script>
   </body>
 </html>
