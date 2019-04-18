@@ -2,33 +2,14 @@ $(window).load(function() {
   //Animate loader off screen
   setInterval(function() {
     $(".se-pre-con").fadeOut("slow");
-  }, 1800);
-  setInterval(function() {
-    $("#portImg").addClass("fadein");
   }, 2000);
 });
-
-$(document).ready(function() {
-  $('.hyperdrive').hover(function() {
-    $(this).html('HYPERDRIVE READY!!');
-  }, function() {
-    $(this).html('HYPERDRIVE');
-  });
-});
-
-$(document).ready(function() {
-  $('.home').hover(function() {
-    $(this).html('Warning!');
-  }, function() {
-    $(this).html('Recall');
-  });
-});
-
 // getting data from local storage
 var data = JSON.parse(localStorage.update);
 //array to hold rules of Buy and Sell based on class name
 var buySellRule=[];
 var sectorName = document.getElementById('planetName');
+var nextSector = document.getElementById('hyper');
 
 function updatePlayerStats(){
   var fuel = document.getElementById('userFuelStat');
@@ -134,20 +115,42 @@ function updateNextQuest(){
   input4.value = outLet[3];
   input5.value = outLet[4];
 }
+//change background to the visited sector
 function updateSectorVisted(){
-  var sec1 = document.getElementById('sec1Nm');
-  var sec2 = document.getElementById('sec2Nm');
-  var sec3 = document.getElementById('sec3Nm');
-  var sec4 = document.getElementById('sec4Nm');
-  var sec5 = document.getElementById('sec5Nm');
+  //array to hold all label from html
+  var toUpdate = [];
+  var visitedSec = data.visitedSectorsArray;
   var curSec = data.currentSector;
   var outLet = allSectors[curSec].sectorsOut;
-  for(var i = 0 ; i < 5; i++){
-    
+
+  toUpdate.push(document.getElementById('sec1Nm'));
+  toUpdate.push(document.getElementById('sec2Nm'));
+  toUpdate.push(document.getElementById('sec3Nm'));
+  toUpdate.push(document.getElementById('sec4Nm'));
+  toUpdate.push(document.getElementById('sec5Nm'));
+
+  for(var i = 0 ; i < visitedSec.length; i++){
+    if(outLet.includes(visitedSec[i])){
+      toUpdate[i].classList.add('didIt');
+    }
   }
 }
-updateSectorStats();
-buySellStats();
-updatePlayerStats();
-updateNextQuest();
-updateSectorVisted();
+//upon page load
+function pageLoad(){
+  updateSectorStats();
+  buySellStats();
+  updatePlayerStats();
+  updateNextQuest();
+  updateSectorVisted();
+}
+//going to the sector
+function next(){
+  data = JSON.parse(localStorage.update);
+  buySellRule=[];
+  pageLoad();
+}
+
+pageLoad();
+nextSector.addEventListener('click','next');
+
+
