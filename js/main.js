@@ -162,7 +162,9 @@ function next(){
       nextSec = formValues[i].value;
     }
   }
+  
   data.visitedSectorsArray.push(data.currentSector);
+
   data.currentSector = nextSec;
   localStorage.setItem('player', JSON.stringify(data));
   // data = JSON.parse(localStorage.update);
