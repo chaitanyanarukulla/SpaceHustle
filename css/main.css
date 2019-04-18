@@ -1,6 +1,10 @@
 /* @import url(https://fonts.googleapis.com/css?family=Orbitron|Passion+One); */
 
 body{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Orbitron', sans-serif;
   background-image: url(../assets/background/bg1.jpg);
   height: 100%;
@@ -28,11 +32,13 @@ button:focus {outline:0;}
 /*lower half of container */
 .section2{
   position: absolute;
+  margin-top: 100px 0 0;
   bottom: 0;
   left: 0;
   right: 0;
+  height: 210px;
   display:table-row;
-  width: 100%;
+  /* width: 100%; */
 }
 .col1{
   bottom: 0;
@@ -122,7 +128,6 @@ button:focus {outline:0;}
   text-align: center;
   width: 100%;
 }
-
 .pulse {
   cursor: pointer;
   width: 200px;
@@ -134,9 +139,10 @@ button:focus {outline:0;}
   display: inline-block;
   border-radius: 50px;
   }
-.pulse:hover {
+.pulseReady {
+  padding: 5px;
   background: #af7b2c;
-  border-radius: 1px;
+  border-radius: 50px;
   color: #faf0e2 !important;
   border-color: #4cf808 !important;
   transition: all 0.3s ease 0s;
@@ -162,7 +168,9 @@ button:focus {outline:0;}
   box-shadow: 0 0 30px #f6af15;
   }
 .hyperdrive {
-    width: 400px;
+    /* width: 400px; */
+    width: 20%;
+    max-width: 600px;
 }
 .pulse2 {
   cursor: pointer;
@@ -201,7 +209,6 @@ button:focus {outline:0;}
   animation-name: typing;
   animation-delay: 3s;
   animation: typing 5.5s steps(50, end), blinking-cursor .7s step-end infinite;
-  /* animation: blinking-cursor .7s step-end infinite; */
 }
 /* The typing effect */
 @keyframes typing {
@@ -250,6 +257,7 @@ fieldset p {
   position: absolute;
   margin-top: 5%;
   margin-left: 45%;
+
   max-width: 500px;
   min-width: 200px;
   z-index: -1;
@@ -273,6 +281,19 @@ fieldset p {
   }
 }
 
+.fadeout {
+  opacity: 0;
+  animation: fadeout 8s ease;
+}
+@keyframes fadeout{
+  80%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
 strong{
   color: #58ba83;
 }
@@ -291,7 +312,7 @@ strong{
   left: 50%;
   top: 50%;
   display: table;
-  margin-top: -40px;
+  margin-top: -10px;
   margin-left: -150px;
 }
 .col4 input{
@@ -329,4 +350,19 @@ input[type="radio"]:checked + label{
   color: white;
   padding: 35px 40px;
   border-radius: 3px;
+}
+
+.flashit{
+  animation-delay: 3s;
+  color:#ffffff;
+	-webkit-animation: flash linear 2s infinite;
+	animation: flash linear 2s infinite;}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
 }

@@ -30,11 +30,11 @@
       <form id='userInfo'>
         <div class='section2'>
             <label for='name'>Player Name</label></br>
-            <input type="text" name='userName'id="userName" size ='35' required>
+            <input type="text" name='userName'id="userName" size='35' required>
             <br>
-            <!-- Game design change: removed ship naming feature-->
-            <!-- <label for='name'>Ship Name</label></br>
-            <input type="text" name='shipName' id="shipName" size ='35'required> -->
+            <!-- Game design change: removed ship naming feature -->
+            <!-- <label for='name'>Ship Name</label></br> -->
+            <input type="hidden" name='shipName' id="shipName" size ='35'required>
         </div>
         <div class='section3'>
           <div class="center-align">
@@ -55,9 +55,6 @@
 <script src='./js/user.js'></script>
 <script src='./js/main.js'></script>
 <script>
-  //   setInterval(function() {
-  //   $("*").addClass("fadein");
-  // }, 500);
   $("*").addClass("fadein");
     $('#startGame').hover(function() {
       $(this).html('Launch!!');

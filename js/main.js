@@ -14,11 +14,11 @@ $(document).ready(function() {
   }, function() {
     $(this).html('Recall');
   });
-  $('.hyperdrive').hover(function() {
-    $(this).html('HYPERDRIVE READY!!');
-  }, function() {
-    $(this).html('HYPERDRIVE');
-  });
+  // $('.hyperdrive').hover(function() {
+  //   $(this).html('ENGAGE!');
+  // }, function() {
+  //   $(this).html('Charging HYPERDRIVE ');
+  // });
 });
 
 // getting data from local storage
@@ -50,7 +50,7 @@ function updateSectorStats(){
   fuel.innerHTML = allPorts[curSec].fuel;
   org.innerHTML = allPorts[curSec].organics;
   equ.innerHTML = allPorts[curSec].equipment;
-  sectorName.innerHTML = ': ' +allSectors[allPorts[curSec].portSector].sectorName;
+  sectorName.innerHTML = allSectors[allPorts[curSec].portSector].sectorName;
 
 }
 //Buy and Sell stats
