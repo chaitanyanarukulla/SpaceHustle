@@ -63,7 +63,7 @@ function buySellStats(){
 function sectorRules(className){
   //NO-PORT','Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8'
   if(className==='NO-PORT'){
-    buySellRule=['0','0','0'];
+    buySellRule=['No Stock','No Stock','No Stock'];
   }
   else if(className==='Class1'){
     buySellRule=['Buy','Buy','Sell'];
@@ -162,6 +162,7 @@ function next(){
       nextSec = formValues[i].value;
     }
   }
+  data.visitedSectorsArray.push(data.currentSector);
   data.currentSector = nextSec;
   localStorage.setItem('player', JSON.stringify(data));
   // data = JSON.parse(localStorage.update);
