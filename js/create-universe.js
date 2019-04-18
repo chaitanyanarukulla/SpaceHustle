@@ -1,11 +1,11 @@
 'use strict';
 
 let maxSectors = 100;
-var allPorts = [];
-var allSectors = [];
+let allPorts = [];
+let allSectors = [];
 let bigBangArray = [];
 let portClass = ['NO-PORT','Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8'];
-let flag = 'created';
+// let flag = 'created';
 // 3 Array's to randomly generate sector names
 let name1 = ['orion','avatar','proxima','jupiter', 'barite', 'cana', 'pappus', 'bendor', 'catuz', 'new', 'old', 'zodiak', 'kodiak', 'creeper', 'lamblon', 'bevy', 'troy', 'zabion', 'zion', 'refurbished', 'xide', 'hellcat', 'buthcer', 'farley', 'micro', 'shadow', 'zip', 'zep', 'rider', 'alpha', 'omega', 'beta', 'zeta', 'pi', 'jaku', 'hoth', 'alderan', 'tatooine', 'maldacur', 'dantoine', 'degaboh', 'system', 'stellar'];
 let name2 = ['people', 'noctra', 'jets', 'lakers', 'pirates', 'underground', 'annex', 'fluffer', 'carnage', 'carthage', 'ford', 'mustang', 'sally', 'bob', 'billy', 'goat', 'george', 'leona', 'killer', 'instinct', 'hydra'];
@@ -127,6 +127,7 @@ function validateUniverse(){
     }
   }
 }
+
 //loading data from local storage
 function loadData(){
   if(localStorage.length===1){
