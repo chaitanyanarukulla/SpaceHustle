@@ -1,21 +1,3 @@
-$(window).load(function() {
-  // Animate loader off screen
-  setInterval(function() {
-    $(".se-pre-con").fadeOut("slow");
-  }, 2000);
-  setInterval(function() {
-    $("#portImg").addClass("fadein");
-  }, 2000);
-});
-
-$(document).ready(function() {
-  $('.home').hover(function() {
-    $(this).html('Warning!');
-  }, function() {
-    $(this).html('Recall');
-  });
-});
-
 // getting data from local storage
 var data = JSON.parse(localStorage.update);
 //array to hold rules of Buy and Sell based on class name
@@ -176,15 +158,14 @@ function next(){
   pageLoad();
 }
 //trading based on sections stat, get called upon the click:------------------------------------------->
-function trade(){
+// function trade(){
   
-}
+// }
 
-pageLoad();
-nextSector.addEventListener('click','next');
-tradeBtn1.addEventListener('click','trade');
-tradeBtn1.addEventListener('click','trade');
-tradeBtn1.addEventListener('click','trade');
-
+// pageLoad();
+// nextSector.addEventListener('click','next');
+// tradeBtn1.addEventListener('click','trade');
+// tradeBtn1.addEventListener('click','trade');
+// tradeBtn1.addEventListener('click','trade');
 
 
