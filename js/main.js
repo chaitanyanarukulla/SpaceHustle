@@ -1,19 +1,11 @@
 $(window).load(function() {
-  //Animate loader off screen
+  // Animate loader off screen
   setInterval(function() {
     $(".se-pre-con").fadeOut("slow");
-  }, 1800);
+  }, 2000);
   setInterval(function() {
     $("#portImg").addClass("fadein");
   }, 2000);
-});
-
-$(document).ready(function() {
-  $('.hyperdrive').hover(function() {
-    $(this).html('HYPERDRIVE READY!!');
-  }, function() {
-    $(this).html('HYPERDRIVE');
-  });
 });
 
 $(document).ready(function() {
@@ -21,6 +13,11 @@ $(document).ready(function() {
     $(this).html('Warning!');
   }, function() {
     $(this).html('Recall');
+  });
+  $('.hyperdrive').hover(function() {
+    $(this).html('HYPERDRIVE READY!!');
+  }, function() {
+    $(this).html('HYPERDRIVE');
   });
 });
 

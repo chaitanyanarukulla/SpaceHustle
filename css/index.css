@@ -1,4 +1,4 @@
-/* Background */
+/* Video Background */
 * { box-sizing: border-box; }
 .video-background {
   background: #000;
@@ -37,7 +37,6 @@
   display: block;
   position: absolute;
 }
-
 .titlewrapper {
 	color: #fff;
   text-transform: uppercase;
@@ -224,6 +223,7 @@
 }
 
 .flashit{
+  animation-delay: 3s;
   display: block;
   color:#f2f;
 	-webkit-animation: flash linear 2s infinite;
