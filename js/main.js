@@ -145,6 +145,7 @@ function updateSectorVisted(){
 }
 //upon page load :------------------------------------------->
 function pageLoad(){
+  data = JSON.parse(localStorage.player);
   updateSectorStats();
   buySellStats();
   updatePlayerStats();
@@ -153,8 +154,17 @@ function pageLoad(){
 }
 //going to the next sector, get called upon click :------------------------------------------->
 function next(){
-  data = JSON.parse(localStorage.update);
-  buySellRule=[];
+  var formValues = document.getElementById('nextQuest');
+  var nextSec =0;
+  for(var i =3 ; i < 8;i++){
+    if(formValues[i].checked){
+      nextSec = formValues[i].value;
+    }
+  }
+  data.currentSector = nextSec;
+  localStorage.setItem('player', JSON.stringify(data));
+  // data = JSON.parse(localStorage.update);
+  // buySellRule=[];
   pageLoad();
 }
 //trading based on sections stat, get called upon the click:------------------------------------------->
@@ -162,7 +172,14 @@ function trade(event){
   var toDo = tradeBtn1.value;
   console.log(toDo);
 }
-
+//go back to home button
+function recall(){
+  data.currentSector = 0;
+  localStorage.setItem('player', JSON.stringify(data));
+  // data = JSON.parse(localStorage.update);
+  // buySellRule=[];
+  pageLoad();
+}
 pageLoad();
 nextSector.addEventListener('click',next);
 tradeBtn1.addEventListener('click',trade);
