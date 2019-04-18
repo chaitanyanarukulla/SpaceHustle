@@ -19,7 +19,7 @@ function subbmitUserinfo() {
   var diffculity = getLevelValue(document.getElementById('userInfo'),'level');
   var shipName = 'Death-Co-lider';
   player = new User(userName,diffculity,shipName);
-  localStorage.setItem('update', JSON.stringify(player));
+  localStorage.setItem('player', JSON.stringify(player));
   window.open ('mainHTML.html','_self',false);
 }
 
@@ -40,19 +40,7 @@ var User = function(userName,level) {
   this.equipHolds = 0;
   this.emptyHolds = 500;
 };
-// function getProfileName(){
-//   proPic = window.event.srcElement.id;
-//   if(isFirst){
-//     document.getElementById(proPic).style.opacity ='1';
-//     preProPic = proPic;
-//     isFirst = false;
-//   }
-//   else{
-//     document.getElementById(preProPic).style.opacity ='0.7';
-//     document.getElementById(proPic).style.opacity ='1';
-//     preProPic = proPic;
-//   }
-// }
+
 function getLevelValue(form,name){
   var value ='';
   var radio = form.elements[name];

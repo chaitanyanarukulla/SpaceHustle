@@ -1,30 +1,22 @@
 'use strict';
 
 let maxSectors = 100;
-let allPorts = [];
-let allSectors = [];
+var allPorts = [];
+var allSectors = [];
 let bigBangArray = [];
 let portClass = ['NO-PORT','Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8'];
+let flag = 'created';
 // 3 Array's to randomly generate sector names
 let name1 = ['orion','avatar','proxima','jupiter', 'barite', 'cana', 'pappus', 'bendor', 'catuz', 'new', 'old', 'zodiak', 'kodiak', 'creeper', 'lamblon', 'bevy', 'troy', 'zabion', 'zion', 'refurbished', 'xide', 'hellcat', 'buthcer', 'farley', 'micro', 'shadow', 'zip', 'zep', 'rider', 'alpha', 'omega', 'beta', 'zeta', 'pi', 'jaku', 'hoth', 'alderan', 'tatooine', 'maldacur', 'dantoine', 'degaboh', 'system', 'stellar'];
 let name2 = ['people', 'noctra', 'jets', 'lakers', 'pirates', 'underground', 'annex', 'fluffer', 'carnage', 'carthage', 'ford', 'mustang', 'sally', 'bob', 'billy', 'goat', 'george', 'leona', 'killer', 'instinct', 'hydra'];
 let name3 = ['I', 'II', 'III', 'IV', 'V', 'VI','VII', 'VIII', 'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII', 'XIX', 'XX'];
 
-// Adds all sectors to the BigBangArray to ensure that a sector does not get duplicated
-  generateBigBangArray(); // Sets Array to random order
-  bigBang(); // Generates sectors by pushing to the constructor.
-  setStaticSectors(); // Sets static warps for sectors 1-10.
-  generatePortSectorOneToTen();
-  setAllOtherSectors(); // Generate warps for sectors 11-maxSectors
-  validateUniverse();
-
 //Constructor function to generate a game sector with 5 warps out.
-  function Sectors(sectorNumber, port=sectorNumber){
+function Sectors(sectorNumber, port=sectorNumber){
   this.sectorNumber = sectorNumber;
   this.sectorName = generateName(); // Random Generate Name
   this.sectorsOut = [];
   this.port = port;
-
   allSectors.push(this);
 }
 
@@ -100,7 +92,7 @@ function setAllOtherSectors(){
         allSectors[j].sectorsOut = allSectors[j].sectorsOut.sort();
       }
       if (i === 4) {
-        new Ports(j, portClass[getRandomNumber(0, 9)]);  // Creates sectors.
+        new Ports(j, portClass[getRandomNumber(0, 9)]); // Creates sectors.
       }
     }
   }
@@ -122,7 +114,7 @@ function capFirst(string) {
 
 function generateName(){
   let name = capFirst(name1[getRandomNumber(0, name1.length)]) + ' ' + capFirst(name2[getRandomNumber(0, name2.length)]) + ' ' + capFirst(name3[getRandomNumber(0, name3.length)]);
-	return name;
+  return name;
 }
 
 // Testing Function to validate there are no 0 Warp sectors.
@@ -135,3 +127,22 @@ function validateUniverse(){
     }
   }
 }
+//loading data from local storage
+function loadData(){
+  if(localStorage.length===1){
+    // Adds all sectors to the BigBangArray to ensure that a sector does not get duplicated
+    generateBigBangArray(); // Sets Array to random order
+    bigBang(); // Generates sectors by pushing to the constructor.
+    setStaticSectors(); // Sets static warps for sectors 1-10.
+    generatePortSectorOneToTen();
+    setAllOtherSectors(); // Generate warps for sectors 11-maxSectors
+    validateUniverse();
+    localStorage.setItem('allSectors',JSON.stringify(allSectors));
+    localStorage.setItem('allPorts',JSON.stringify(allPorts));
+  }
+  else{
+    allSectors = JSON.parse(localStorage.allSectors);
+    allPorts = JSON.parse(localStorage.allPorts);
+  }
+}
+loadData();
