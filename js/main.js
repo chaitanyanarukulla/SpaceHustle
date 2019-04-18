@@ -14,11 +14,6 @@ $(document).ready(function() {
   }, function() {
     $(this).html('Recall');
   });
-  // $('.hyperdrive').hover(function() {
-  //   $(this).html('ENGAGE!');
-  // }, function() {
-  //   $(this).html('Charging HYPERDRIVE ');
-  // });
 });
 
 // getting data from local storage

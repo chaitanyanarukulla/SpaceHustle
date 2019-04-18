@@ -59,11 +59,6 @@ h2 {
   z-index: -99;
 }
 
-/* input {
-  display: block;
-  transition: .3s ease;
-} */
-
 /* for the background video */
 .video-foreground,
 .video-background iframe {

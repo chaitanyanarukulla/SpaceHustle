@@ -27,7 +27,6 @@ button {
   padding: 1em 2em;
   cursor: pointer;
 }
-
 button:focus {outline:0;}
 /*lower half of container */
 .section2{
@@ -62,7 +61,6 @@ button:focus {outline:0;}
   width: 20px;
   height: 20px; 
 }
-
 .col2{
   padding-bottom: 0;
   width:10%;
@@ -365,4 +363,8 @@ input[type="radio"]:checked + label{
 	0% { opacity: 1; } 
 	50% { opacity: .1; } 
 	100% { opacity: 1; }
+}
+
+.playerStats {
+  color: greenyellow;
 }
