@@ -1,6 +1,10 @@
 /* @import url(https://fonts.googleapis.com/css?family=Orbitron|Passion+One); */
 
 body{
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: 'Orbitron', sans-serif;
   background-image: url(../assets/background/bg1.jpg);
   height: 100%;
@@ -23,16 +27,17 @@ button {
   padding: 1em 2em;
   cursor: pointer;
 }
-
 button:focus {outline:0;}
 /*lower half of container */
 .section2{
   position: absolute;
+  margin-top: 100px 0 0;
   bottom: 0;
   left: 0;
   right: 0;
+  height: 210px;
   display:table-row;
-  width: 100%;
+  /* width: 100%; */
 }
 .col1{
   bottom: 0;
@@ -56,7 +61,6 @@ button:focus {outline:0;}
   width: 20px;
   height: 20px; 
 }
-
 .col2{
   padding-bottom: 0;
   width:10%;
@@ -78,7 +82,6 @@ button:focus {outline:0;}
   margin-right: 10px;
   font-family: 'Orbitron', sans-serif;
 }
-
 .col3{
   display:table-cell;
   width:15%;
@@ -108,7 +111,6 @@ button:focus {outline:0;}
   height: 210px;
   width: auto;
   text-align: center;
-
 }
 .col4 button{
   font-family: 'Orbitron',sans-serif;
@@ -124,20 +126,6 @@ button:focus {outline:0;}
   text-align: center;
   width: 100%;
 }
-input[type="radio"]:checked + label{
-  background-color:#30f38e;
-}
-input[type="radio"]:checked + label{
-  background: #e99518;
-  border-radius: 1px;
-  color: #faf0e2 !important;
-  border-color: #494949 !important;
-  transition: all 0.3s ease 0s;
-  box-shadow: 0 0 25px #e99518
-  
-}
-
-
 .pulse {
   cursor: pointer;
   width: 200px;
@@ -149,39 +137,39 @@ input[type="radio"]:checked + label{
   display: inline-block;
   border-radius: 50px;
   }
-
-.pulse:hover {
+.pulseReady {
+  padding: 5px;
   background: #af7b2c;
-  border-radius: 1px;
+  border-radius: 50px;
   color: #faf0e2 !important;
   border-color: #4cf808 !important;
   transition: all 0.3s ease 0s;
   box-shadow: 0 0 30px #4cf808;
   }
-  
 .home {
-    width: 120px;
-    cursor: pointer;
-    color: #ffffff !important;
-    text-transform: uppercase;
-    background: #666666;
-    padding: 5px;
-    border: 4px solid #7b817e !important;
-    display: inline-block;
-    border-radius: 50px;  
+  width: 120px;
+  cursor: pointer;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  background: #666666;
+  padding: 5px;
+  border: 4px solid #7b817e !important;
+  display: inline-block;
+  border-radius: 50px;  
   }
-  .home:hover {
-    background: #ff0000;
-    border-radius: 1px;
-    color: #faf0e2 !important;
-    border-color: #f6af15 !important;
-    transition: all 0.3s ease 0s;
-    box-shadow: 0 0 30px #f6af15;
-    }
+.home:hover {
+  background: #ff0000;
+  border-radius: 1px;
+  color: #faf0e2 !important;
+  border-color: #f6af15 !important;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 0 30px #f6af15;
+  }
 .hyperdrive {
-    width: 400px;
+    /* width: 400px; */
+    width: 20%;
+    max-width: 600px;
 }
-
 .pulse2 {
   cursor: pointer;
   width: auto;
@@ -218,11 +206,8 @@ input[type="radio"]:checked + label{
   letter-spacing: .10em; /* Adjust as needed */
   animation-name: typing;
   animation-delay: 3s;
-  animation: 
-    typing 5.5s steps(50, end),
-    blinking-cursor .7s step-end infinite;
+  animation: typing 5.5s steps(50, end), blinking-cursor .7s step-end infinite;
 }
-
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
@@ -235,6 +220,7 @@ input[type="radio"]:checked + label{
   50% { border-color: #e99518; }
 }
 
+/* Loading animation */
 .no-js #loader { 
   display: none;
 }
@@ -269,21 +255,20 @@ fieldset p {
   position: absolute;
   margin-top: 5%;
   margin-left: 45%;
+
   max-width: 500px;
   min-width: 200px;
   z-index: -1;
 }
 .portBox img{
-max-width: 100%;
-max-height: 100%;
-box-shadow: 10px 10px 5px #474542;
+  /* opacity: 0; */
+  max-width: 100%;
+  max-height: 100%;
+  box-shadow: 10px 10px 5px #474542;
 }
-
 /* Port image fade in */
 .fadein {
-  opacity: 1;
-  animation-delay: 3s;
-  animation: fadeIn 4s ease;
+  animation: fadeIn 10s ease;
 }
 @keyframes fadeIn{
   0%{
@@ -294,7 +279,19 @@ box-shadow: 10px 10px 5px #474542;
   }
 }
 
-/* */
+.fadeout {
+  opacity: 0;
+  animation: fadeout 8s ease;
+}
+@keyframes fadeout{
+  80%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+
 strong{
   color: #58ba83;
 }
@@ -313,14 +310,8 @@ strong{
   left: 50%;
   top: 50%;
   display: table;
-  margin-top: -40px;
+  margin-top: -10px;
   margin-left: -150px;
-}
-
-input[type="radio"]{
-  visibility: hidden;
-  height: 0;
-  width: 0;
 }
 .col4 input{
   margin-left:60px;
@@ -334,10 +325,46 @@ input[type="radio"]{
   color: white;
   padding: 35px 40px;
   border-radius: 3px;
-  .transition;
 }
-
+input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
 input[type="radio"]:checked + label{
-  background-color: #58ba83;
+  background: #e99518;
+  border-radius: 1px;
+  color: #faf0e2 !important;
+  border-color: #494949 !important;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 0 25px #e99518
+}
+.ditIt {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  background-color: #454545;
+  color: white;
+  padding: 35px 40px;
+  border-radius: 3px;
 }
 
+.flashit{
+  animation-delay: 3s;
+  color:#ffffff;
+	-webkit-animation: flash linear 2s infinite;
+	animation: flash linear 2s infinite;}
+@-webkit-keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }}
+@keyframes flash {
+	0% { opacity: 1; } 
+	50% { opacity: .1; } 
+	100% { opacity: 1; }
+}
+
+.playerStats {
+  color: greenyellow;
+}

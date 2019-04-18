@@ -3,6 +3,21 @@ This is the style for the start page
 */
 /* Card contains all the sections inside it */
 /* User Interface or data: font-family: 'Passion One', cursive; */
+* {
+
+}
+.fadein {
+  margin-top: 75px;
+  animation: fadeIn 3s ease;
+}
+@keyframes fadeIn{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
 body {
   font-family: 'Orbitron', sans-serif;
   background-attachment: fixed;
@@ -42,11 +57,6 @@ h2 {
   position: fixed;
   top: 0; right: 0; bottom: 0; left: 0;
   z-index: -99;
-}
-
-input {
-  display: block;
-  transition: .3s ease;
 }
 
 /* for the background video */
@@ -115,12 +125,36 @@ style for the userName and shipName
 }
 .section3 label{
   font-size: 20px;
-  width: 200px;
+  width: 150px;
+  padding: 10px;
 }
+.section3 label {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+  background-color: #454545;
+  color: white;
+  padding: 10px;
+  border-radius: 3px;
+}
+input[type="radio"]{
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+input[type="radio"]:checked + label{
+  background-color:#e99518;
+  box-shadow: 0 0 20px #af7b2c;
+}
+.section3 label:hover {
+  background: #af7b2c;
+  border-radius: 1px;
+  color: #faf0e2 !important;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0 0 20px #af7b2c;
+  }
 
-.section3 button:hover{ 
-  background-position: right center; 
-}
 .section4{
   margin-top: 50px;
 }
@@ -141,27 +175,6 @@ strong{
 }
 .center-align{
   display: inline;
-}
-
-input[type="radio"]{
-  visibility: hidden;
-  height: 0;
-  width: 0;
-}
-
-.section3 label {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  cursor: pointer;
-  background-color: #454545;
-  color: white;
-  padding: 35px 40px;
-  border-radius: 3px;
-}
-
-input[type="radio"]:checked + label{
-  background-color:#e99518;
 }
 
 .flashit{
@@ -191,4 +204,8 @@ input[type="radio"]:checked + label{
   transform:rotate(-2deg);
   transform: scale(2);
   transition-duration: .5s;
+}
+
+input {
+  margin: 20px 0;
 }

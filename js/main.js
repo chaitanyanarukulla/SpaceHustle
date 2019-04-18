@@ -1,9 +1,21 @@
 $(window).load(function() {
-  //Animate loader off screen
+  // Animate loader off screen
   setInterval(function() {
     $(".se-pre-con").fadeOut("slow");
   }, 2000);
+  setInterval(function() {
+    $("#portImg").addClass("fadein");
+  }, 2000);
 });
+
+$(document).ready(function() {
+  $('.home').hover(function() {
+    $(this).html('Warning!');
+  }, function() {
+    $(this).html('Recall');
+  });
+});
+
 // getting data from local storage
 var data = JSON.parse(localStorage.update);
 //array to hold rules of Buy and Sell based on class name
@@ -41,7 +53,7 @@ function updateSectorStats(){
   fuel.innerHTML = allPorts[curSec].fuel;
   org.innerHTML = allPorts[curSec].organics;
   equ.innerHTML = allPorts[curSec].equipment;
-  sectorName.innerHTML = ': ' +allSectors[allPorts[curSec].portSector].sectorName;
+  sectorName.innerHTML = allSectors[allPorts[curSec].portSector].sectorName;
 
 }
 //Buy and Sell stats :------------------------------------------->
