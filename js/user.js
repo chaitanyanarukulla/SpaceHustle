@@ -1,11 +1,6 @@
 'use strict';
 var player = {};
 
-//to held value of selected profile pic---------------------------------------------->
-// var proPic = document.getElementById('img');
-
-//previously selected profile avatar------------------------------------------------->
-// var preProPic = '';
 
 //Flag for selecting avatar --------------------------------------------------------->
 var isFirst = true;
@@ -29,7 +24,7 @@ var User = function(userName,level) {
   this.level = level;
   // this.shipName = shipName;
   // this.proPic = proPic;
-  this.currentSector = 0;
+  this.currentSector = 45;
   this.visitedSectorsArray = [];
   this.currentHolds = 500;
   this.turnsleft = 50;
@@ -54,5 +49,3 @@ function getLevelValue(form,name){
 }
 
 console.log('player data:', player);
-//when user selects the profile pic---------------------------------------------->
-// proPic.addEventListener('click',getProfileName);
