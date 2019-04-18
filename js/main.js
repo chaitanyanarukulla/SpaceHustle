@@ -1,12 +1,12 @@
 // getting data from local storage
-var data = JSON.parse(localStorage.update);
+var data = JSON.parse(localStorage.player);
 //array to hold rules of Buy and Sell based on class name
 var buySellRule=[];
 //to update the planet name
 var sectorName = document.getElementById('planetName');
 //to next information about which sector user is going next
 var nextSector = document.getElementById('hyper');
-//logic for BUY/SELL , what all is user doing 
+//logic for BUY/SELL , what all is user doing
 var tradeBtn1 = document.getElementById('sectorFuel');
 var tradeBtn2 = document.getElementById('sectorOrganic');
 var tradeBtn3 = document.getElementById('sectorEquipment');
@@ -158,14 +158,14 @@ function next(){
   pageLoad();
 }
 //trading based on sections stat, get called upon the click:------------------------------------------->
-// function trade(){
-  
-// }
+function trade(event){
+  var toDo = tradeBtn1.value;
+  console.log(toDo);
+}
 
-// pageLoad();
-// nextSector.addEventListener('click','next');
-// tradeBtn1.addEventListener('click','trade');
-// tradeBtn1.addEventListener('click','trade');
-// tradeBtn1.addEventListener('click','trade');
-
+pageLoad();
+nextSector.addEventListener('click',next);
+tradeBtn1.addEventListener('click',trade);
+tradeBtn2.addEventListener('click',trade);
+tradeBtn3.addEventListener('click',trade);
 
