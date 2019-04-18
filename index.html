@@ -26,9 +26,13 @@
 
     <section class='homebackground'>
       <div class='wrapbox'>
-        <h1 id="title" class='titlewrapper'>
+        <!-- <h1 class='titlewrapper'>
+            <span class='maintitle' style="font-family: 'Passion One', cursive;">Space Hustle</h1> -->
+        <h1 class='newTitle' style="font-family: 'Passion One', cursive;">Space Hustle<span class='newTitle' style="font-family: 'Orbitron', cursive; font-size: 40%;">Get them credits, Partner!</span></h1>
+    
+        <!-- <h1 id="title" class='titlewrapper'>
           <span class='maintitle' style="font-family: 'Passion One', cursive;">Space Hustle</span>
-          <span class='maintitle' style="font-family: 'Orbitron', sans-serif;">Get them Credits, Partner!</span>
+          <span class='maintitle' style="font-family: 'Orbitron', sans-serif;">Get them Credits, Partner!</span> -->
         </h1>
       </div>
     </section>
@@ -40,27 +44,8 @@
         <div class="flashit" id="playerSettings" value = 'Settings' onclick="location.href='topScoresHTML.html';"/><p>SETTINGS</p></div>
         <div class="flashit" id="aboutUs" id ='aboutUs' type='' value = 'about_us' onclick="location.href='about_us.html';"/><p>ABOUT US</p></div>
       </div>
-
+    <script src="js/index.js"></script>
     <script>
-      // Title animation
-      $(document).ready(function(){
-      // Hide Title on load to allow animation to look more fluid
-      document.getElementById("title").style.opacity = 0;
-      // SetTimeout for background to load
-      setTimeout(function() {
-        $('.maintitle').lettering();
-        animation();
-        console.log('running letter animation.');
-        }, 2000);
-      });
-      function animation() {
-        setTimeout(function() {
-        // Restore Title opacity right before animation start
-        document.getElementById("title").style.opacity = 1;
-        var title1 = new TimelineMax();
-        title1.staggerFromTo('.maintitle span', 0.5, {ease: Back.easeOut.config(1.7), opacity: 0, bottom: -80},{ease: Back.easeOut.config(1.7), opacity: 1, bottom: 0}, 0.10);
-        }, 1000);
-      }
     localStorage.clear();
     </script>
   </body>

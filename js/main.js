@@ -1,21 +1,3 @@
-$(window).load(function() {
-  // Animate loader off screen
-  setInterval(function() {
-    $(".se-pre-con").fadeOut("slow");
-  }, 2000);
-  setInterval(function() {
-    $("#portImg").addClass("fadein");
-  }, 2000);
-});
-
-$(document).ready(function() {
-  $('.home').hover(function() {
-    $(this).html('Warning!');
-  }, function() {
-    $(this).html('Recall');
-  });
-});
-
 // getting data from local storage
 var data = JSON.parse(localStorage.player);
 //array to hold rules of Buy and Sell based on class name
@@ -186,6 +168,4 @@ nextSector.addEventListener('click',next);
 tradeBtn1.addEventListener('click',trade);
 tradeBtn2.addEventListener('click',trade);
 tradeBtn3.addEventListener('click',trade);
-
-
 
