@@ -146,6 +146,7 @@ function updateSectorVisted(){
 //upon page load :------------------------------------------->
 function pageLoad(){
   data = JSON.parse(localStorage.player);
+  portClassImg();
   updateSectorStats();
   buySellStats();
   updatePlayerStats();
@@ -180,6 +181,15 @@ function recall(){
   // buySellRule=[];
   pageLoad();
 }
+
+function portClassImg(){
+  console.log('running');
+  var portClassImg = document.getElementById('portImg');
+  var curSec = data.currentSector;
+  var portClass = allPorts[curSec].portClass;
+  portClassImg.classList.add(portClass);
+}
+
 pageLoad();
 nextSector.addEventListener('click',next);
 tradeBtn1.addEventListener('click',trade);

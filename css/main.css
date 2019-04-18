@@ -103,7 +103,7 @@ button:focus {outline:0;}
 }
 .col4{
   display:table-cell;
-  width:60%;
+  width:auto;
 }
 .col4 fieldset{
   /* display: inline-block; */
@@ -118,8 +118,9 @@ button:focus {outline:0;}
   display: table-row;
 }
 .colHead{
-  text-align: center;
+  /* text-align: center; */
   width: 100%;
+  min-width: 100%;
 }
 .colBody{
   display:table-row;
@@ -304,14 +305,14 @@ strong{
   
 }
 .center-align{
-  width: 300px;
-  height: 80px;
-  position: absolute;
-  left: 50%;
+  text-align: center;
+  width: 250px;
+  height: 70px;
+  margin-right: 50px;
+  margin-top: 20px;
+  left: 30%;
   top: 50%;
   display: table;
-  margin-top: -10px;
-  margin-left: -150px;
 }
 .col4 input{
   margin-left:60px;
@@ -369,3 +370,33 @@ input[type="radio"]:checked + label{
   color: greenyellow;
 }
 
+.Class1 {
+  content:url(../assets/port/1.gif);
+}
+.Class2 {
+  content:url(../assets/port/2.gif);
+}
+.Class3 {
+  content:url(../assets/port/3.gif);
+}
+.Class4 {
+  content:url(../assets/port/4.gif);
+}
+.Class5 {
+  content:url(../assets/port/5.gif);
+}
+.Class6 {
+  content:url(../assets/port/6.gif);
+}
+.Class7 {
+  content:url(../assets/port/7.gif);
+}
+.Class8 {
+  content:url(../assets/port/8.gif);
+}
+.Class9 {
+  content:url(../assets/background/bg2.jpg);
+}
+.NO-PORT {
+  content:url(../assets/port/a-broken.gif);
+}
