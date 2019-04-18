@@ -169,7 +169,7 @@ button:focus {outline:0;}
 .hyperdrive {
     /* width: 400px; */
     width: 20%;
-    max-width: 600px;
+    max-width: 500px;
 }
 .pulse2 {
   cursor: pointer;
@@ -345,10 +345,11 @@ input[type="radio"]:checked + label{
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
-  background-color: #454545;
+  background-color: #1d649e;
   color: white;
   padding: 35px 40px;
   border-radius: 3px;
+  box-shadow: 0 0 25px #40ff05
 }
 
 .flashit{
@@ -369,7 +370,6 @@ input[type="radio"]:checked + label{
 .playerStats {
   color: greenyellow;
 }
-
 .Class1 {
   content:url(../assets/port/1.gif);
 }

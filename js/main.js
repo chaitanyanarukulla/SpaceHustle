@@ -35,7 +35,7 @@ function updateSectorStats(){
   fuel.innerHTML = allPorts[curSec].fuel;
   org.innerHTML = allPorts[curSec].organics;
   equ.innerHTML = allPorts[curSec].equipment;
-  sectorName.innerHTML = allSectors[allPorts[curSec].portSector].sectorName;
+  sectorName.innerHTML = 'SECTOR: [' + curSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
 
 }
 //Buy and Sell stats :------------------------------------------->
@@ -146,12 +146,12 @@ function updateSectorVisted(){
 //upon page load :------------------------------------------->
 function pageLoad(){
   data = JSON.parse(localStorage.player);
-  portClassImg();
   updateSectorStats();
   buySellStats();
   updatePlayerStats();
   updateNextQuest();
   updateSectorVisted();
+  portClassImg();
 }
 //going to the next sector, get called upon click :------------------------------------------->
 function next(){
@@ -194,6 +194,13 @@ function recall(){
   // data = JSON.parse(localStorage.update);
   // buySellRule=[];
   pageLoad();
+}
+
+function goIndex(){
+  console.log('goIndex');
+  console.log('goIndex');
+  console.log('goIndex');
+  window.open ('index.html','_self',false);
 }
 
 function portClassImg(){

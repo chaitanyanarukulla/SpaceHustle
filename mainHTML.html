@@ -20,7 +20,7 @@
 <body>
     <div class='typewriterBox'>
         <div class="typewriter">
-        <h1><span class="fadeout">NOW ARRIVING AT SECTOR: </span><label id='planetName'>[sectorname]</label><span class="fadeout">....</span></h1>
+        <h1><span class="fadeout">NOW ARRIVING AT </span><label id='planetName'>[sectorname]</label><span class="fadeout">....</span></h1>
       </div>
     </div>
     <div class='portBox'>
@@ -106,7 +106,8 @@
                   <a class="flashit" onclick=next()
                   id='hyperText'>CHARGING......</a>
                 </button>
-                <button class='home' id='home' title='Recall' onclick="recall()">Recall</button>
+                <button class='home' id='home' title='Home' onclick="recall()">Recall</button>
+                <div class='home' id='clear' title='Clear' onclick="goIndex()">Clear</div>
               </div>
               <div class="center-align"> 
                 <input type="radio" name="size" id="sec1" checked/>
