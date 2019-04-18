@@ -17,7 +17,7 @@ function subbmitUserinfo() {
   var userName = document.getElementById('userName').value;
   //userInfo is the id of the form and level is the name for all the radio buttons in that form
   var diffculity = getLevelValue(document.getElementById('userInfo'),'level');
-  var shipName = document.getElementById('shipName').value;
+  var shipName = 'Death-Co-lider';
   player = new User(userName,diffculity,shipName,proPic);
   localStorage.setItem('update', JSON.stringify(player));
   window.open ('mainHTML.html','_self',false);
