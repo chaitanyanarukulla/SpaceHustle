@@ -168,11 +168,25 @@ function next(){
   pageLoad();
 }
 //trading based on sections stat, get called upon the click:------------------------------------------->
-function trade(event){
+function tradeFuel(){
   var toDo = tradeBtn1.value;
-  console.log(toDo);
+  var itemName = ' ';
+  product(toDo,'fuel');
+}
+//trading based on sections stat, get called upon the click:------------------------------------------->
+function tradeOrganic(){
+  var toDo = tradeBtn2.value;
+  var itemName = ' ';
+  product(toDo,'org');
+}
+//trading based on sections stat, get called upon the click:------------------------------------------->
+function tradeEqu(){
+  var toDo = tradeBtn3.value;
+  var itemName = ' ';
+  product(toDo,'equip');
 }
 //go back to home button
+// eslint-disable-next-line called in HTML
 function recall(){
   data.currentSector = 0;
   localStorage.setItem('player', JSON.stringify(data));
@@ -182,7 +196,6 @@ function recall(){
 }
 pageLoad();
 nextSector.addEventListener('click',next);
-tradeBtn1.addEventListener('click',trade);
-tradeBtn2.addEventListener('click',trade);
-tradeBtn3.addEventListener('click',trade);
-
+tradeBtn1.addEventListener('click',tradeFuel);
+tradeBtn2.addEventListener('click',tradeOrganic);
+tradeBtn3.addEventListener('click',tradeEqu);
