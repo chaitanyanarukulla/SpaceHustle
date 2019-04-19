@@ -31,10 +31,10 @@ function updateSectorStats(){
   var org = document.getElementById('sectorOraganicStat');
   var equ = document.getElementById('sectorEquimentStat');
   var curSec = data.currentSector;
-
   fuel.innerHTML = allPorts[curSec].fuel;
   org.innerHTML = allPorts[curSec].organics;
   equ.innerHTML = allPorts[curSec].equipment;
+
   sectorName.innerHTML = 'SECTOR: [' + curSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
 
 }
@@ -126,20 +126,14 @@ function updateNextQuest(){
 //change background to the visited sector :------------------------------------------->
 function updateSectorVisted(){
   //array to hold all label from html
-  var toUpdate = [];
+  var toUpdate = document.querySelectorAll('.col4 input');
+  var changeLabel = document.querySelectorAll('.col4 label');
   var visitedSec = data.visitedSectorsArray;
-  var curSec = data.currentSector;
-  var outLet = allSectors[curSec].sectorsOut;
-
-  toUpdate.push(document.getElementById('sec1Nm'));
-  toUpdate.push(document.getElementById('sec2Nm'));
-  toUpdate.push(document.getElementById('sec3Nm'));
-  toUpdate.push(document.getElementById('sec4Nm'));
-  toUpdate.push(document.getElementById('sec5Nm'));
-
-  for(var i = 0 ; i < visitedSec.length; i++){
-    if(outLet.includes(visitedSec[i])){
-      toUpdate[i].classList.add('didIt');
+  console.log(visitedSec);
+  for(var i = 0 ; i < toUpdate.length; i++){
+    console.log(toUpdate[i].value);
+    if(visitedSec.includes(toUpdate[i].value)){
+      changeLabel[i].style.background='lightgreen';
     }
   }
 }
@@ -157,14 +151,14 @@ function pageLoad(){
 function next(){
   var formValues = document.getElementById('nextQuest');
   var nextSec =0;
-  for(var i =3 ; i < 8;i++){
+  for(var i =3 ; i <8;i++){
+    //console.log(formValues[i].value);
     if(formValues[i].checked){
       nextSec = formValues[i].value;
     }
   }
-  
+  data.turnsleft -= 1;
   data.visitedSectorsArray.push(data.currentSector);
-
   data.currentSector = nextSec;
   localStorage.setItem('player', JSON.stringify(data));
   // data = JSON.parse(localStorage.update);
@@ -192,6 +186,7 @@ function tradeEqu(){
 //go back to home button
 // eslint-disable-next-line called in HTML
 function recall(){
+  data.visitedSectorsArray.push(data.currentSector);
   data.currentSector = 0;
   localStorage.setItem('player', JSON.stringify(data));
   // data = JSON.parse(localStorage.update);
