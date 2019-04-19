@@ -63,7 +63,6 @@ function product(toDo, product){
           holdsToBuy = Math.floor(data.credits / (productMasterPrice * sell));
         }
       } else { // empty holds is greater than port product
-
         if (data.credits > (productMasterPrice * portProduct * sell)) {
           holdsToBuy = portProduct
         } else { // Only buying partial with credits on hand
@@ -75,19 +74,8 @@ function product(toDo, product){
         holdsToSell = shipProduct;
       } else {
         holdsToSell = portProduct;
-
       }
     }
   }
-  display();
 }
 
-
-// Need to save to local storage
-
-function display(){
-  console.log('Current Credits: ', data.credits);
-  console.log('Max Holds: | EMPTY HOLDS', data.maxHolds, ' | ', data.emptyHolds);
-  console.log('Holds: Fuel | Org | Equip : ', data.fuelHolds, ' | ', data.orgHolds, ' | ', data.equipHolds);
-  console.log('Port:  Fuel | Org | Equip: ',allPorts[data.currentSector].fuel, ' | ', allPorts[data.currentSector].organics, ' | ', allPorts[data.currentSector].equipment);
-}

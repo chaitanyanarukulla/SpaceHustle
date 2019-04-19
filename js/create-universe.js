@@ -1,11 +1,10 @@
 'use strict';
 
-let maxSectors = 100;
+let maxSectors = 1000;
 let allPorts = [];
 let allSectors = [];
 let bigBangArray = [];
 let portClass = ['NO-PORT','Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8'];
-// let flag = 'created';
 // 3 Array's to randomly generate sector names
 let name1 = ['orion','avatar','proxima','jupiter', 'barite', 'cana', 'pappus', 'bendor', 'catuz', 'new', 'old', 'zodiak', 'kodiak', 'creeper', 'lamblon', 'bevy', 'troy', 'zabion', 'zion', 'refurbished', 'xide', 'hellcat', 'buthcer', 'farley', 'micro', 'shadow', 'zip', 'zep', 'rider', 'alpha', 'omega', 'beta', 'zeta', 'pi', 'jaku', 'hoth', 'alderan', 'tatooine', 'maldacur', 'dantoine', 'degaboh', 'system', 'stellar'];
 let name2 = ['people', 'noctra', 'jets', 'lakers', 'pirates', 'underground', 'annex', 'fluffer', 'carnage', 'carthage', 'ford', 'mustang', 'sally', 'bob', 'billy', 'goat', 'george', 'leona', 'killer', 'instinct', 'hydra'];
@@ -31,8 +30,8 @@ function Ports(portSector,portClass='Class0'){
   this.portSector = portSector;
   this.portClass = portClass;
   this.fuel = getRandomNumber(3000,4000);
-  this.organics = getRandomNumber(1000,4000);
-  this.equipment = getRandomNumber(800,3000);
+  this.organics = getRandomNumber(2000,4000);
+  this.equipment = getRandomNumber(1800,3000);
   this.sellPercent = getRandomNumber(60,79)/100;
   this.buyPercent = getRandomNumber(81,100)/100;
 
@@ -113,8 +112,7 @@ function capFirst(string) {
 }
 
 function generateName(){
-  let name = capFirst(name1[getRandomNumber(0, name1.length)]) + ' ' + capFirst(name2[getRandomNumber(0, name2.length)]) + ' ' + capFirst(name3[getRandomNumber(0, name3.length)]);
-  return name;
+  return capFirst(name1[getRandomNumber(0, name1.length)]) + ' ' + capFirst(name2[getRandomNumber(0, name2.length)]) + ' ' + capFirst(name3[getRandomNumber(0, name3.length)]);
 }
 
 // Testing Function to validate there are no 0 Warp sectors.
