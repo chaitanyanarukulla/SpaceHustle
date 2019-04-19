@@ -31,13 +31,17 @@ function updateSectorStats(){
   var org = document.getElementById('sectorOraganicStat');
   var equ = document.getElementById('sectorEquimentStat');
   var curSec = data.currentSector;
+  if(curSec === 0){
+    var rearCurSec = parseInt(data.currentSector) +1;
+    sectorName.innerHTML = 'SECTOR: [' + rearCurSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
+  } else {
+    sectorName.innerHTML = 'SECTOR: [' + curSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
+  }
   fuel.innerHTML = allPorts[curSec].fuel;
   org.innerHTML = allPorts[curSec].organics;
   equ.innerHTML = allPorts[curSec].equipment;
-
-  sectorName.innerHTML = 'SECTOR: [' + curSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
-
 }
+
 //Buy and Sell stats :------------------------------------------->
 function buySellStats(){
   var fuel = document.getElementById('sectorFuel');
@@ -105,6 +109,7 @@ function updateNextQuest(){
   var sec5 = document.getElementById('sec5Nm');
   var curSec = data.currentSector;
   var outLet = allSectors[curSec].sectorsOut;
+  
 
   sec1.innerHTML = outLet[0];
   sec2.innerHTML = outLet[1];
@@ -126,6 +131,7 @@ function updateNextQuest(){
 //change background to the visited sector :------------------------------------------->
 function updateSectorVisted(){
   //array to hold all label from html
+
   var toUpdate = document.querySelectorAll('.col4 input');
   var changeLabel = document.querySelectorAll('.col4 label');
   var visitedSec = data.visitedSectorsArray;
@@ -134,6 +140,7 @@ function updateSectorVisted(){
     console.log(toUpdate[i].value);
     if(visitedSec.includes(toUpdate[i].value)){
       changeLabel[i].style.background='lightgreen';
+
     }
   }
 }
@@ -151,13 +158,18 @@ function pageLoad(){
 function next(){
   var formValues = document.getElementById('nextQuest');
   var nextSec =0;
+
   for(var i =3 ; i <8;i++){
     //console.log(formValues[i].value);
+
     if(formValues[i].checked){
       nextSec = formValues[i].value;
+      
     }
   }
+
   data.turnsleft -= 1;
+
   data.visitedSectorsArray.push(data.currentSector);
   data.currentSector = nextSec;
   localStorage.setItem('player', JSON.stringify(data));
