@@ -35,12 +35,13 @@ function updateSectorStats(){
     var rearCurSec = parseInt(data.currentSector) +1;
     sectorName.innerHTML = 'SECTOR: [' + rearCurSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
   } else {
-    fuel.innerHTML = allPorts[curSec].fuel;
-    org.innerHTML = allPorts[curSec].organics;
-    equ.innerHTML = allPorts[curSec].equipment;
     sectorName.innerHTML = 'SECTOR: [' + curSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
   }
+  fuel.innerHTML = allPorts[curSec].fuel;
+  org.innerHTML = allPorts[curSec].organics;
+  equ.innerHTML = allPorts[curSec].equipment;
 }
+
 //Buy and Sell stats :------------------------------------------->
 function buySellStats(){
   var fuel = document.getElementById('sectorFuel');
@@ -130,28 +131,16 @@ function updateNextQuest(){
 //change background to the visited sector :------------------------------------------->
 function updateSectorVisted(){
   //array to hold all label from html
-  var doms = ["sec1","sec2","sec3","sec4","sec5"]
-  var toUpdate = [];
+
+  var toUpdate = document.querySelectorAll('.col4 input');
+  var changeLabel = document.querySelectorAll('.col4 label');
   var visitedSec = data.visitedSectorsArray;
-  var curSec = data.currentSector;
-  var outLet = allSectors[curSec].sectorsOut;
+  console.log(visitedSec);
+  for(var i = 0 ; i < toUpdate.length; i++){
+    console.log(toUpdate[i].value);
+    if(visitedSec.includes(toUpdate[i].value)){
+      changeLabel[i].style.background='lightgreen';
 
-  toUpdate.push(document.getElementById('sec1Nm'));
-  toUpdate.push(document.getElementById('sec2Nm'));
-  toUpdate.push(document.getElementById('sec3Nm'));
-  toUpdate.push(document.getElementById('sec4Nm'));
-  toUpdate.push(document.getElementById('sec5Nm'));
-
-  for(var i = 0 ; i < visitedSec.length; i++){
-    console.log('loop');
-    if(outLet.includes(visitedSec[i])){
-      for(var j = 0 ; j < doms.length; j++){
-        console.log('loop');
-        console.log(doms[j]);
-        document.getElementById(doms[j]).classList.add('didIt');
-        // document.getElementById(doms[j]).classList.add('didIt');
-      // toUpdate[i].classList.add('didIt');
-      }
     }
   }
 }
@@ -169,14 +158,18 @@ function pageLoad(){
 function next(){
   var formValues = document.getElementById('nextQuest');
   var nextSec =0;
-  console.log('test1', formValues);
-  for(var i =3 ; i < 8;i++){
-    console.log('test1 loops', formValues[i]);
+
+  for(var i =3 ; i <8;i++){
+    //console.log(formValues[i].value);
+
     if(formValues[i].checked){
       nextSec = formValues[i].value;
       
     }
   }
+
+  data.turnsleft -= 1;
+
   data.visitedSectorsArray.push(data.currentSector);
   data.currentSector = nextSec;
   localStorage.setItem('player', JSON.stringify(data));
@@ -205,6 +198,7 @@ function tradeEqu(){
 //go back to home button
 // eslint-disable-next-line called in HTML
 function recall(){
+  data.visitedSectorsArray.push(data.currentSector);
   data.currentSector = 0;
   localStorage.setItem('player', JSON.stringify(data));
   // data = JSON.parse(localStorage.update);
