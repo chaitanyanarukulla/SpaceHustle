@@ -1,10 +1,12 @@
 'use strict';
+
 document.addEventListener('DOMContentLoaded', function() {
   // Warp and Port Animation call.
   var el = document.getElementById('portImg');
   el.style.opacity = 0;
   fadeOutWarp();
   setTimeout(function(){
+
     fadeInPort();
   }, 2000);
   // Warp button animation.
@@ -39,8 +41,8 @@ function fadeInPort(){
 }
 
 function move() {
-  var elem = document.getElementById("hyper");   
-  var elemText = document.getElementById("hyperText");  
+  var elem = document.getElementById("hyper");
+  var elemText = document.getElementById("hyperText");
   var width = 20;
   var id = setInterval(frame, 80);
   function frame() {
@@ -50,9 +52,9 @@ function move() {
       elem.classList.add('pulseReady');
       elemText.innerHTML = 'WARPDRIVE READY!';
     } else {
-      width++; 
+      width++;
       elem.style.width = width + '%';
-      elemText.innerHTML = width * 1  + '%'; 
+      elemText.innerHTML = width * 1  + '%';
     }
   }
 }

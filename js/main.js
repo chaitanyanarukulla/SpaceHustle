@@ -110,7 +110,7 @@ function updateNextQuest(){
   var sec5 = document.getElementById('sec5Nm');
   var curSec = data.currentSector;
   var outLet = allSectors[curSec].sectorsOut;
-  
+
 
   sec1.innerHTML = outLet[0];
   sec2.innerHTML = outLet[1];
@@ -164,16 +164,16 @@ function next(){
   var nextSec =0;
 
   for(var i =3 ; i <8;i++){
-    //console.log(formValues[i].value);
-
     if(formValues[i].checked){
       nextSec = formValues[i].value;
-      
     }
   }
 
   data.turnsleft -= 1;
-
+  if (data.turnsleft < 0){
+    console.log('The Game is Over! Granting Extra Turns to Have Fun');
+    turns.left = 10;
+  }
   data.visitedSectorsArray.push(data.currentSector);
   data.currentSector = nextSec;
   localStorage.setItem('player', JSON.stringify(data));
@@ -189,27 +189,24 @@ function tradeFuel(){
   product(toDo,'fuel');
 }
 
-//trading based on sections stat, get called upon the click:---->
+
 function tradeOrganic(){
   var toDo = tradeBtn2.value;
   var itemName = ' ';
   product(toDo,'org');
 }
 
-//trading based on sections stat, get called upon the click:----->
+
 function tradeEqu(){
   var toDo = tradeBtn3.value;
   var itemName = ' ';
   product(toDo,'equip');
 }
 
-
 function recall(){
   data.visitedSectorsArray.push(data.currentSector);
   data.currentSector = 0;
   localStorage.setItem('player', JSON.stringify(data));
-  // data = JSON.parse(localStorage.update);
-  // buySellRule=[];
   pageLoad();
 }
 
