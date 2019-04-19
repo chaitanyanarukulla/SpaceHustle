@@ -33,7 +33,7 @@ function Ports(portSector,portClass='Class0'){
   this.fuel = getRandomNumber(3000,4000);
   this.organics = getRandomNumber(1000,4000);
   this.equipment = getRandomNumber(800,3000);
-  this.sellPercent = getRandomNumber(60,80)/100;
+  this.sellPercent = getRandomNumber(60,79)/100;
   this.buyPercent = getRandomNumber(81,100)/100;
 
   allPorts.push(this);
