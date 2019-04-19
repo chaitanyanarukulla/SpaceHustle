@@ -10,6 +10,8 @@ git clone this Repo https://github.com/chaitanyanarukulla/SpaceHustle
 
 Will be deployed on Gh-Pages
 
+https://chaitanyanarukulla.github.io/SpaceHustle/
+
 ## Built With
 
 * JavaScript
@@ -33,3 +35,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Codefellows T.A
 * Stack overflow
 * W3School
+
+## Documentation
+
+check out Documentation folder for BackStory and instruction to play

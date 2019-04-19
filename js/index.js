@@ -1,3 +1,4 @@
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
   // Warp and Port Animation call.
   setTimeout(function(){
