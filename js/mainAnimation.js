@@ -1,10 +1,10 @@
+'use strict';
 document.addEventListener('DOMContentLoaded', function() {
   // Warp and Port Animation call.
   var el = document.getElementById('portImg');
   el.style.opacity = 0;
   fadeOutWarp();
   setTimeout(function(){
-    
     fadeInPort();
   }, 2000);
   // Warp button animation.
@@ -17,7 +17,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function fadeOutWarp(){
   var el = document.getElementById('warp');
   el.style.opacity = 1;
-
   (function fade() {
     if ((el.style.opacity -= .005) < 0) {
       el.style.display = "none";

@@ -1,16 +1,12 @@
 'use strict';
 var player = {};
-
-
 //Flag for selecting avatar --------------------------------------------------------->
 var isFirst = true;
-
 //Is called in HTML upon form submission ------------------------------------------->
 function subbmitUserinfo() {
   console.log('user.js running sumbitUserinfo');
   event.preventDefault();
   var userName = document.getElementById('userName').value;
-  //userInfo is the id of the form and level is the name for all the radio buttons in that form
   var diffculity = getLevelValue(document.getElementById('userInfo'),'level');
   var shipName = 'Death-Co-lider';
   player = new User(userName,diffculity,shipName);
@@ -47,5 +43,3 @@ function getLevelValue(form,name){
   }
   return value;
 }
-
-console.log('player data:', player);
