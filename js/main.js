@@ -157,14 +157,15 @@ function pageLoad(){
 function next(){
   var formValues = document.getElementById('nextQuest');
   var nextSec =0;
+  console.log('test1', formValues);
   for(var i =3 ; i < 8;i++){
+    console.log('test1 loops', formValues[i]);
     if(formValues[i].checked){
       nextSec = formValues[i].value;
+      
     }
   }
-  
   data.visitedSectorsArray.push(data.currentSector);
-
   data.currentSector = nextSec;
   localStorage.setItem('player', JSON.stringify(data));
   // data = JSON.parse(localStorage.update);
