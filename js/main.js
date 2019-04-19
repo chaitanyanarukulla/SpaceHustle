@@ -31,12 +31,15 @@ function updateSectorStats(){
   var org = document.getElementById('sectorOraganicStat');
   var equ = document.getElementById('sectorEquimentStat');
   var curSec = data.currentSector;
-
-  fuel.innerHTML = allPorts[curSec].fuel;
-  org.innerHTML = allPorts[curSec].organics;
-  equ.innerHTML = allPorts[curSec].equipment;
-  sectorName.innerHTML = 'SECTOR: [' + curSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
-
+  if(curSec === 0){
+    var rearCurSec = parseInt(data.currentSector) +1;
+    sectorName.innerHTML = 'SECTOR: [' + rearCurSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
+  } else {
+    fuel.innerHTML = allPorts[curSec].fuel;
+    org.innerHTML = allPorts[curSec].organics;
+    equ.innerHTML = allPorts[curSec].equipment;
+    sectorName.innerHTML = 'SECTOR: [' + curSec + '] ' + allSectors[allPorts[curSec].portSector].sectorName;
+  }
 }
 //Buy and Sell stats :------------------------------------------->
 function buySellStats(){
@@ -105,6 +108,7 @@ function updateNextQuest(){
   var sec5 = document.getElementById('sec5Nm');
   var curSec = data.currentSector;
   var outLet = allSectors[curSec].sectorsOut;
+  
 
   sec1.innerHTML = outLet[0];
   sec2.innerHTML = outLet[1];
@@ -185,22 +189,18 @@ function tradeFuel(){
   var toDo = tradeBtn1.value;
   var itemName = ' ';
   product(toDo,'fuel');
-  console.log('We are Trading', toDo);
 }
 //trading based on sections stat, get called upon the click:------------------------------------------->
 function tradeOrganic(){
   var toDo = tradeBtn2.value;
-  console.log(tradeBtn2.value);
   var itemName = ' ';
   product(toDo,'org');
-  console.log('We are Trading', toDo);
 }
 //trading based on sections stat, get called upon the click:------------------------------------------->
 function tradeEqu(){
   var toDo = tradeBtn3.value;
   var itemName = ' ';
   product(toDo,'equip');
-  console.log('We are Trading', toDo);
 }
 //go back to home button
 // eslint-disable-next-line called in HTML
