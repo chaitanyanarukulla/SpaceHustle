@@ -37,7 +37,7 @@ function product(toDo, product){
   }
 
   else if ((product === 'equip')&& (toDo === 'Buy')) {
-   calculateProductSell(toDo, allPorts[data.currentSector].equipment, equipMasterPrice, data.equipHolds)
+   calculateProductSell(toDo, allPorts[data.currentSector].equipment, equipMasterPrice, data.equipHolds);
     data.equipHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
     data.credits -= Math.floor(equipMasterPrice * holdsToBuy * sell);
     allPorts[data.currentSector].equipment -= holdsToBuy; // Reduce port product

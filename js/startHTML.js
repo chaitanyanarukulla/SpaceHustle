@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function fadeOutWarp(){
   var el = document.getElementById('mainloader');
   el.style.opacity = 1;
-
   (function fade() {
     if ((el.style.opacity -= .05) < 0) {
       el.style.display = "none";

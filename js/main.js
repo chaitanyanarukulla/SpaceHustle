@@ -11,14 +11,13 @@ var tradeBtn1 = document.getElementById('sectorFuel');
 var tradeBtn2 = document.getElementById('sectorOrganic');
 var tradeBtn3 = document.getElementById('sectorEquipment');
 
-// User object has default game setting :------------------------------------------->
+// User object has default game setting :------------------------>
 function updatePlayerStats(){
   var fuel = document.getElementById('userFuelStat');
   var org = document.getElementById('userOrganicStat');
   var equ = document.getElementById('userEquimentStat');
   var cre = document.getElementById('userCreditStat');
   var turn = document.getElementById('userTurnStat');
-  console.log(data.fuelHolds);
   fuel.innerHTML = data.fuelHolds;
   org.innerHTML = data.orgHolds;
   equ.innerHTML = data.equipHolds;
@@ -63,7 +62,8 @@ function buySellStats(){
   index++;
   equ.value = buySellRule[index];
 }
-// to fill the array of buySellRule rules :------------------------------------------->
+
+// to fill the array of buySellRule rules :--------------------->
 function sectorRules(className){
   //NO-PORT','Class1', 'Class2', 'Class3', 'Class4', 'Class5', 'Class6', 'Class7', 'Class8'
   if(className==='NO-PORT'){
@@ -100,6 +100,7 @@ function sectorRules(className){
     buySellRule=['No Stock','No Stock','No Stock'];
   }
 }
+
 //next quest logic :------------------------------------------->
 function updateNextQuest(){
   var sec1 = document.getElementById('sec1Nm');
@@ -128,7 +129,8 @@ function updateNextQuest(){
   input4.value = outLet[3];
   input5.value = outLet[4];
 }
-//change background to the visited sector :------------------------------------------->
+
+//change background to the visited sector :-------------------->
 function updateSectorVisted(){
   //array to hold all label from html
 
@@ -144,7 +146,8 @@ function updateSectorVisted(){
     }
   }
 }
-//upon page load :------------------------------------------->
+
+//upon page load :--------------------------------------------->
 function pageLoad(){
   data = JSON.parse(localStorage.player);
   updateSectorStats();
@@ -154,7 +157,8 @@ function pageLoad(){
   updateSectorVisted();
   portClassImg();
 }
-//going to the next sector, get called upon click :------------------------------------------->
+
+//going to the next sector, get called upon click :------------->
 function next(){
   var formValues = document.getElementById('nextQuest');
   var nextSec =0;
@@ -177,29 +181,28 @@ function next(){
   // buySellRule=[];
   pageLoad();
 }
-//trading based on sections stat, get called upon the click:------------------------------------------->
+
+//trading based on sections stat, get called upon the click:---->
 function tradeFuel(){
   var toDo = tradeBtn1.value;
   var itemName = ' ';
   product(toDo,'fuel');
 }
 
-//trading based on sections stat, get called upon the click:------------------------------------------->
+
 function tradeOrganic(){
   var toDo = tradeBtn2.value;
   var itemName = ' ';
   product(toDo,'org');
 }
 
-//trading based on sections stat, get called upon the click:------------------------------------------->
+
 function tradeEqu(){
   var toDo = tradeBtn3.value;
   var itemName = ' ';
   product(toDo,'equip');
 }
 
-//go back to home button
-// eslint-disable-next-line called in HTML
 function recall(){
   data.visitedSectorsArray.push(data.currentSector);
   data.currentSector = 0;

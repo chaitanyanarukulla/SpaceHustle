@@ -2,6 +2,8 @@
 
 let player = {};
 let credits, turns, holds;
+//Flag for selecting avatar --------------------------------------------------------->
+var isFirst = true;
 //Is called in HTML upon form submission ------------------------------------------->
 function subbmitUserinfo() {
   console.log('user.js running sumbitUserinfo');
@@ -17,6 +19,7 @@ function subbmitUserinfo() {
     credits = 100000; turns = 450; holds = 600;
   }
   player = new User(userName,credits, turns, holds);
+  userName = document.getElementById('userName').value;
   localStorage.setItem('player', JSON.stringify(player));
   window.open ('mainHTML.html','_self',false);
 }
