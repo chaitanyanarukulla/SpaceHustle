@@ -126,6 +126,7 @@ function updateNextQuest(){
 //change background to the visited sector :------------------------------------------->
 function updateSectorVisted(){
   //array to hold all label from html
+  var doms = ["sec1","sec2","sec3","sec4","sec5"]
   var toUpdate = [];
   var visitedSec = data.visitedSectorsArray;
   var curSec = data.currentSector;
@@ -138,8 +139,15 @@ function updateSectorVisted(){
   toUpdate.push(document.getElementById('sec5Nm'));
 
   for(var i = 0 ; i < visitedSec.length; i++){
+    console.log('loop');
     if(outLet.includes(visitedSec[i])){
-      toUpdate[i].classList.add('didIt');
+      for(var j = 0 ; j < doms.length; j++){
+        console.log('loop');
+        console.log(doms[j]);
+        document.getElementById(doms[j]).classList.add('didIt');
+        // document.getElementById(doms[j]).classList.add('didIt');
+      // toUpdate[i].classList.add('didIt');
+      }
     }
   }
 }
