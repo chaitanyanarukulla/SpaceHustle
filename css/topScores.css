@@ -16,7 +16,9 @@ div
   /* //float: right; */
   background-image: url('../assets/img/topScoreHead.gif');
   background-repeat: no-repeat;
+  height: 300px;
 }
+
 li{
   border-bottom: 5px solid white;
   width:280px;
