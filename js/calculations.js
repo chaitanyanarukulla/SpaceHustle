@@ -19,34 +19,40 @@ function product(toDo, product){
     data.fuelHolds -= holdsToSell;
     data.credits += Math.floor(holdsToSell * allPorts[data.currentSector].buyPercent * fuelMasterPrice);
     data.emptyHolds += holdsToSell;
+    allPorts[data.currentSector].fuel -= holdsToSell;
 
   } else if ((product === 'org') && (toDo === 'Buy')){
    calculateProductSell(toDo, allPorts[data.currentSector].organics, orgMasterPrice, data.orgHolds)
-      data.orgHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
-      data.credits -= Math.floor(orgMasterPrice * holdsToBuy * sell);
-      allPorts[data.currentSector].organics -= holdsToBuy; // Reduce port product
-      data.emptyHolds -= holdsToBuy;
+    data.orgHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
+    data.credits -= Math.floor(orgMasterPrice * holdsToBuy * sell);
+    allPorts[data.currentSector].organics -= holdsToBuy; // Reduce port product
+    data.emptyHolds -= holdsToBuy;
 
   } else if ((product === 'org') && (toDo === 'Sell')) {
     calculateProductSell(toDo, allPorts[data.currentSector].organics, orgMasterPrice, data.orgHolds);
     data.orgHolds -= holdsToSell;
     data.credits += Math.floor(holdsToSell * allPorts[data.currentSector].buyPercent * orgMasterPrice);
     data.emptyHolds += holdsToSell;
+    allPorts[data.currentSector].organics -= holdsToSell;
   }
 
   else if ((product === 'equip')&& (toDo === 'Buy')) {
    calculateProductSell(toDo, allPorts[data.currentSector].equipment, equipMasterPrice, data.equipHolds)
-      data.equipHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
-      data.credits -= Math.floor(equipMasterPrice * holdsToBuy * sell);
-      allPorts[data.currentSector].equipment -= holdsToBuy; // Reduce port product
-      data.emptyHolds -= holdsToBuy;
+    data.equipHolds += holdsToBuy; // Buying all empty hold.  Has enough credits
+    data.credits -= Math.floor(equipMasterPrice * holdsToBuy * sell);
+    allPorts[data.currentSector].equipment -= holdsToBuy; // Reduce port product
+    data.emptyHolds -= holdsToBuy;
 
   } else if ((product === 'equip') && (toDo === 'Sell')) {
     calculateProductSell(toDo, allPorts[data.currentSector].equipment, equipMasterPrice, data.equipHolds);
     data.equipHolds -= holdsToSell;
     data.credits += Math.floor(holdsToSell * allPorts[data.currentSector].buyPercent * equipMasterPrice);
     data.emptyHolds += holdsToSell;
+    allPorts[data.currentSector].equipment -= holdsToSell;
+
   }
+  updatePlayerStats();
+  updateSectorStats();
 
   function calculateProductSell(toDo, portProduct, productMasterPrice, shipProduct){
     if (toDo === 'Buy') { // THIS IS THE PORT PORT PORT Selling  (Player Buying)
@@ -68,7 +74,8 @@ function product(toDo, product){
       if (shipProduct < portProduct) {
         holdsToSell = shipProduct;
       } else {
-          holdsToSell = portProduct;
+        holdsToSell = portProduct;
+
       }
     }
   }
