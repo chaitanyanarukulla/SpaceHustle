@@ -172,18 +172,22 @@ function tradeFuel(){
   var toDo = tradeBtn1.value;
   var itemName = ' ';
   product(toDo,'fuel');
+  console.log('We are Trading', toDo);
 }
 //trading based on sections stat, get called upon the click:------------------------------------------->
 function tradeOrganic(){
   var toDo = tradeBtn2.value;
+  console.log(tradeBtn2.value);
   var itemName = ' ';
   product(toDo,'org');
+  console.log('We are Trading', toDo);
 }
 //trading based on sections stat, get called upon the click:------------------------------------------->
 function tradeEqu(){
   var toDo = tradeBtn3.value;
   var itemName = ' ';
   product(toDo,'equip');
+  console.log('We are Trading', toDo);
 }
 //go back to home button
 // eslint-disable-next-line called in HTML
