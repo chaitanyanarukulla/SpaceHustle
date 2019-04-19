@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   // Warp and Port Animation call.
   var el = document.getElementById('portImg');
   el.style.opacity = 0;
-
+  fadeOutWarp();
   setTimeout(function(){
-    fadeOutWarp();
+    
     fadeInPort();
   }, 2000);
   // Warp button animation.
@@ -19,7 +19,7 @@ function fadeOutWarp(){
   el.style.opacity = 1;
 
   (function fade() {
-    if ((el.style.opacity -= .05) < 0) {
+    if ((el.style.opacity -= .005) < 0) {
       el.style.display = "none";
     } else {
       requestAnimationFrame(fade);
@@ -57,13 +57,4 @@ function move() {
     }
   }
 }
-// var portImg = document.getElementById("portImg"); 
-// portImg.addClass("fadein");
-// $(document).ready(function() {
-//   $('.home').hover(function() {
-//     $(this).html('Warning!');
-//   }, function() {
-//     $(this).html('Recall');
-//   });
-// });
 
